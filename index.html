@@ -4,15 +4,21 @@
 
 <!DOCTYPE html>
 
-<html class="light" lang="en"><head>
-<meta charset="utf-8"/>
-<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-<title>Kalida Motors | Trust-First Import Service</title>
-<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
-<link href="https://fonts.googleapis.com/css2?family=Public+Sans:wght@300;400;500;600;700;800;900&amp;display=swap" rel="stylesheet"/>
-<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght@100..700,0..1&amp;display=swap" rel="stylesheet"/>
-<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
-<script id="tailwind-config">
+<html class="light" lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>Kalida Motors | Trust-First Import Service</title>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Public+Sans:wght@300;400;500;600;700;800;900&amp;display=swap"
+        rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght@100..700,0..1&amp;display=swap"
+        rel="stylesheet" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+        rel="stylesheet" />
+    <script id="tailwind-config">
         tailwind.config = {
             darkMode: "class",
             theme: {
@@ -25,255 +31,418 @@
                     fontFamily: {
                         "display": ["Public Sans", "sans-serif"]
                     },
-                    borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
+                    borderRadius: { "DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px" },
                 },
             },
         }
     </script>
-<style>
+    <style>
         body {
             font-family: "Public Sans", sans-serif;
         }
     </style>
 </head>
+
 <body class="bg-background-light dark:bg-background-dark text-[#111418] dark:text-white transition-colors duration-300">
-<div class="relative flex h-auto min-h-screen w-full flex-col group/design-root overflow-x-hidden">
-<div class="layout-container flex h-full grow flex-col">
-<!-- Top Navigation Bar -->
-<header class="flex items-center justify-between whitespace-nowrap border-b border-solid border-slate-200 dark:border-slate-800 px-10 py-4 bg-white/80 dark:bg-background-dark/80 backdrop-blur-md sticky top-0 z-50">
-<div class="flex items-center gap-3 text-[#111418] dark:text-white">
-<div class="size-8 text-primary">
-<svg fill="none" viewbox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
-<g clip-path="url(#clip0_6_319)">
-<path d="M8.57829 8.57829C5.52816 11.6284 3.451 15.5145 2.60947 19.7452C1.76794 23.9758 2.19984 28.361 3.85056 32.3462C5.50128 36.3314 8.29667 39.7376 11.8832 42.134C15.4698 44.5305 19.6865 45.8096 24 45.8096C28.3135 45.8096 32.5302 44.5305 36.1168 42.134C39.7033 39.7375 42.4987 36.3314 44.1494 32.3462C45.8002 28.361 46.2321 23.9758 45.3905 19.7452C44.549 15.5145 42.4718 11.6284 39.4217 8.57829L24 24L8.57829 8.57829Z" fill="currentColor"></path>
-</g>
-<defs>
-<clippath id="clip0_6_319"><rect fill="white" height="48" width="48"></rect></clippath>
-</defs>
-</svg>
-</div>
-<h2 class="text-[#111418] dark:text-white text-xl font-extrabold leading-tight tracking-tight">KALIDA MOTORS</h2>
-</div>
-<div class="flex flex-1 justify-end gap-8 items-center">
-<nav class="hidden md:flex items-center gap-9">
-<a class="text-[#111418] dark:text-slate-300 text-sm font-semibold hover:text-primary dark:hover:text-primary transition-colors" href="#">How it Works</a>
-<a class="text-[#111418] dark:text-slate-300 text-sm font-semibold hover:text-primary dark:hover:text-primary transition-colors" href="#">Services</a>
-<a class="text-[#111418] dark:text-slate-300 text-sm font-semibold hover:text-primary dark:hover:text-primary transition-colors" href="#">About Us</a>
-</nav>
-<button class="flex min-w-[140px] cursor-pointer items-center justify-center overflow-hidden rounded-lg h-10 px-5 bg-primary text-white text-sm font-bold leading-normal tracking-wide hover:brightness-110 transition-all">
-<span class="truncate">Start Inquiry</span>
-</button>
-</div>
-</header>
-<!-- Hero Section -->
-<section class="flex flex-1 justify-center py-10 md:py-20 bg-white dark:bg-background-dark">
-<div class="layout-content-container flex flex-col max-w-[1200px] flex-1 px-4 md:px-10">
-<div class="@container">
-<div class="flex flex-col gap-8 @[864px]:flex-row @[864px]:items-center">
-<div class="flex flex-col gap-6 flex-1 @[864px]:justify-center">
-<div class="flex flex-col gap-4 text-left">
-<h1 class="text-[#111418] dark:text-white text-4xl font-black leading-tight tracking-tight @[480px]:text-6xl">
+    <div class="relative flex h-auto min-h-screen w-full flex-col group/design-root">
+        <div class="layout-container flex h-full grow flex-col">
+            {% include header.html %}
+            <!-- Hero Section -->
+            <section class="flex flex-1 justify-center py-10 md:py-20 bg-white dark:bg-background-dark">
+                <div class="layout-content-container flex flex-col max-w-[1200px] flex-1 px-4 md:px-10">
+                    <div class="@container">
+                        <div class="flex flex-col gap-8 @[864px]:flex-row @[864px]:items-center">
+                            <div class="flex flex-col gap-6 flex-1 @[864px]:justify-center">
+                                <div class="flex flex-col gap-4 text-left">
+                                    <h1
+                                        class="text-[#111418] dark:text-white text-4xl font-black leading-tight tracking-tight @[480px]:text-6xl">
                                         Trusted Motor Imports to Kenya
                                     </h1>
-<p class="text-[#617289] dark:text-slate-400 text-lg font-normal leading-relaxed max-w-[540px]">
-                                        Experience a transparent, auction-verified process. We handle everything from the bidding floor to your driveway in Kenya.
+                                    <p
+                                        class="text-[#617289] dark:text-slate-400 text-lg font-normal leading-relaxed max-w-[540px]">
+                                        Experience a transparent, auction-verified process. We handle everything from
+                                        the bidding floor to your driveway in Kenya.
                                     </p>
-</div>
-<div class="flex flex-wrap gap-4 mt-2">
-<button class="flex min-w-[200px] cursor-pointer items-center justify-center overflow-hidden rounded-lg h-14 px-6 bg-primary text-white text-base font-bold leading-normal tracking-wide shadow-lg shadow-primary/20 hover:scale-[1.02] active:scale-[0.98] transition-all">
-<span class="truncate">Start Import Inquiry</span>
-</button>
-<button class="flex min-w-[160px] cursor-pointer items-center justify-center overflow-hidden rounded-lg h-14 px-6 bg-slate-100 dark:bg-slate-800 text-[#111418] dark:text-white text-base font-bold leading-normal border border-slate-200 dark:border-slate-700 hover:bg-slate-200 dark:hover:bg-slate-700 transition-all">
-<span class="truncate">View Process</span>
-</button>
-</div>
-</div>
-<div class="w-full flex-1">
-<div class="w-full aspect-[4/3] bg-center bg-no-repeat bg-cover rounded-2xl shadow-2xl overflow-hidden border-8 border-white dark:border-slate-800" data-alt="Luxury SUV in a clean showroom environment" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuB3JsxqNguDKLBA5xchm1vhVSTdpVL8KeF9N0pZMZU02AzTHIee1LJatxfBcWfe5o5driwLnI5Ud5uQ0AJI0OcwYj3TNAJiA2O14NkSP5u-ncfn8VbSR_aQQMp_laNB3-zt-MNp3dx7dxWU0d6ZpoBNQ0zq-GKFeFM-qFtdx8sKNQIDvTntFxhBbr8VGckbwPJ6obmgJuXC78uSiJ4VRv9ceRuaTdAq-XfHf4BNHteOQNu_vi66EpWvEcRiQQpYfJVmQtaMYRK-ZNY");'>
-</div>
-</div>
-</div>
-</div>
-</div>
-</section>
-<!-- How It Works Section Header -->
-<section class="flex flex-1 justify-center pt-16 pb-4 bg-background-light dark:bg-background-dark/50">
-<div class="layout-content-container flex flex-col max-w-[1200px] flex-1 px-4 md:px-10 text-center">
-<span class="text-primary font-bold uppercase tracking-widest text-xs mb-3">Our Process</span>
-<h2 class="text-[#111418] dark:text-white text-3xl md:text-4xl font-extrabold leading-tight tracking-tight">How It Works</h2>
-<div class="w-20 h-1 bg-primary mx-auto mt-4 rounded-full"></div>
-</div>
-</section>
-<!-- Text Grid: 6 Steps -->
-<section class="flex flex-1 justify-center py-10 bg-background-light dark:bg-background-dark/50">
-<div class="layout-content-container flex flex-col max-w-[1200px] flex-1 px-4 md:px-10">
-<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-<!-- Step 1 -->
-<div class="flex flex-1 gap-5 rounded-xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900 p-8 flex-col hover:shadow-xl hover:-translate-y-1 transition-all duration-300">
-<div class="text-primary bg-primary/10 w-12 h-12 rounded-lg flex items-center justify-center">
-<span class="material-symbols-outlined text-3xl">forum</span>
-</div>
-<div class="flex flex-col gap-2">
-<div class="text-xs font-bold text-slate-400 uppercase tracking-tighter">Step 01</div>
-<h3 class="text-[#111418] dark:text-white text-lg font-bold leading-tight">Consultation</h3>
-<p class="text-[#617289] dark:text-slate-400 text-sm font-normal leading-relaxed">Define your dream car's specifications, year of manufacture, and target budget with our experts.</p>
-</div>
-</div>
-<!-- Step 2 -->
-<div class="flex flex-1 gap-5 rounded-xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900 p-8 flex-col hover:shadow-xl hover:-translate-y-1 transition-all duration-300">
-<div class="text-primary bg-primary/10 w-12 h-12 rounded-lg flex items-center justify-center">
-<span class="material-symbols-outlined text-3xl">pageview</span>
-</div>
-<div class="flex flex-col gap-2">
-<div class="text-xs font-bold text-slate-400 uppercase tracking-tighter">Step 02</div>
-<h3 class="text-[#111418] dark:text-white text-lg font-bold leading-tight">Auction Selection</h3>
-<p class="text-[#617289] dark:text-slate-400 text-sm font-normal leading-relaxed">Access daily verified auction listings and expert analysis of auction sheets.</p>
-</div>
-</div>
-<!-- Step 3 -->
-<div class="flex flex-1 gap-5 rounded-xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900 p-8 flex-col hover:shadow-xl hover:-translate-y-1 transition-all duration-300">
-<div class="text-primary bg-primary/10 w-12 h-12 rounded-lg flex items-center justify-center">
-<span class="material-symbols-outlined text-3xl">gavel</span>
-</div>
-<div class="flex flex-col gap-2">
-<div class="text-xs font-bold text-slate-400 uppercase tracking-tighter">Step 03</div>
-<h3 class="text-[#111418] dark:text-white text-lg font-bold leading-tight">Bidding &amp; Purchase</h3>
-<p class="text-[#617289] dark:text-slate-400 text-sm font-normal leading-relaxed">We bid on your behalf to secure the vehicle at the best market value without overpaying.</p>
-</div>
-</div>
-<!-- Step 4 -->
-<div class="flex flex-1 gap-5 rounded-xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900 p-8 flex-col hover:shadow-xl hover:-translate-y-1 transition-all duration-300">
-<div class="text-primary bg-primary/10 w-12 h-12 rounded-lg flex items-center justify-center">
-<span class="material-symbols-outlined text-3xl">directions_boat</span>
-</div>
-<div class="flex flex-col gap-2">
-<div class="text-xs font-bold text-slate-400 uppercase tracking-tighter">Step 04</div>
-<h3 class="text-[#111418] dark:text-white text-lg font-bold leading-tight">Inspection &amp; Shipping</h3>
-<p class="text-[#617289] dark:text-slate-400 text-sm font-normal leading-relaxed">Pre-export quality checks followed by secure ocean freight to the Port of Mombasa.</p>
-</div>
-</div>
-<!-- Step 5 -->
-<div class="flex flex-1 gap-5 rounded-xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900 p-8 flex-col hover:shadow-xl hover:-translate-y-1 transition-all duration-300">
-<div class="text-primary bg-primary/10 w-12 h-12 rounded-lg flex items-center justify-center">
-<span class="material-symbols-outlined text-3xl">description</span>
-</div>
-<div class="flex flex-col gap-2">
-<div class="text-xs font-bold text-slate-400 uppercase tracking-tighter">Step 05</div>
-<h3 class="text-[#111418] dark:text-white text-lg font-bold leading-tight">Customs Clearance</h3>
-<p class="text-[#617289] dark:text-slate-400 text-sm font-normal leading-relaxed">Professional handling of KRA duties, taxes, and all regulatory documentation.</p>
-</div>
-</div>
-<!-- Step 6 -->
-<div class="flex flex-1 gap-5 rounded-xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900 p-8 flex-col hover:shadow-xl hover:-translate-y-1 transition-all duration-300">
-<div class="text-primary bg-primary/10 w-12 h-12 rounded-lg flex items-center justify-center">
-<span class="material-symbols-outlined text-3xl">car_rental</span>
-</div>
-<div class="flex flex-col gap-2">
-<div class="text-xs font-bold text-slate-400 uppercase tracking-tighter">Step 06</div>
-<h3 class="text-[#111418] dark:text-white text-lg font-bold leading-tight">Final Delivery</h3>
-<p class="text-[#617289] dark:text-slate-400 text-sm font-normal leading-relaxed">Your car is registered, detailed, and delivered to your preferred location in Kenya.</p>
-</div>
-</div>
-</div>
-</div>
-</section>
-<!-- Feature Section: Why Choose Us -->
-<section class="flex flex-1 justify-center py-20 bg-white dark:bg-background-dark">
-<div class="layout-content-container flex flex-col max-w-[1200px] flex-1 px-4 md:px-10 @container">
-<div class="flex flex-col md:flex-row gap-12 items-start">
-<div class="flex flex-col gap-6 flex-1">
-<h2 class="text-[#111418] dark:text-white tracking-tight text-3xl font-extrabold leading-tight @[480px]:text-4xl max-w-[720px]">
+                                </div>
+                                <div class="flex flex-wrap gap-4 mt-2">
+                                    <button
+                                        class="flex min-w-[200px] cursor-pointer items-center justify-center overflow-hidden rounded-lg h-14 px-6 bg-primary text-white text-base font-bold leading-normal tracking-wide shadow-lg shadow-primary/20 hover:scale-[1.02] active:scale-[0.98] transition-all">
+                                        <span class="truncate">Start Import Inquiry</span>
+                                    </button>
+                                    <a href="/process.html">
+                                    <button
+                                        class="flex min-w-[160px] cursor-pointer items-center justify-center overflow-hidden rounded-lg h-14 px-6 bg-slate-100 dark:bg-slate-800 text-[#111418] dark:text-white text-base font-bold leading-normal border border-slate-200 dark:border-slate-700 hover:bg-slate-200 dark:hover:bg-slate-700 transition-all">
+                                        <span class="truncate">View Process</span>
+                                    </button>
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="w-full flex-1">
+                                <div class="w-full aspect-[4/3] bg-center bg-no-repeat bg-cover rounded-2xl shadow-2xl overflow-hidden border-8 border-white dark:border-slate-800"
+                                    data-alt="Luxury SUV in a clean showroom environment"
+                                    style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuB3JsxqNguDKLBA5xchm1vhVSTdpVL8KeF9N0pZMZU02AzTHIee1LJatxfBcWfe5o5driwLnI5Ud5uQ0AJI0OcwYj3TNAJiA2O14NkSP5u-ncfn8VbSR_aQQMp_laNB3-zt-MNp3dx7dxWU0d6ZpoBNQ0zq-GKFeFM-qFtdx8sKNQIDvTntFxhBbr8VGckbwPJ6obmgJuXC78uSiJ4VRv9ceRuaTdAq-XfHf4BNHteOQNu_vi66EpWvEcRiQQpYfJVmQtaMYRK-ZNY");'>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <!-- How It Works Section Header -->
+            <section class="flex flex-1 justify-center pt-16 pb-4 bg-background-light dark:bg-background-dark/50">
+                <div class="layout-content-container flex flex-col max-w-[1200px] flex-1 px-4 md:px-10 text-center">
+                    <span class="text-primary font-bold uppercase tracking-widest text-xs mb-3">Our Process</span>
+                    <h2
+                        class="text-[#111418] dark:text-white text-3xl md:text-4xl font-extrabold leading-tight tracking-tight">
+                        How It Works</h2>
+                    <div class="w-20 h-1 bg-primary mx-auto mt-4 rounded-full"></div>
+                </div>
+            </section>
+            <!-- Text Grid: 6 Steps -->
+            <section class="flex flex-1 justify-center py-10 bg-background-light dark:bg-background-dark/50">
+                <div class="layout-content-container flex flex-col max-w-[1200px] flex-1 px-4 md:px-10">
+                    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                        <!-- Step 1 -->
+                        <div
+                            class="flex flex-1 gap-5 rounded-xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900 p-8 flex-col hover:shadow-xl hover:-translate-y-1 transition-all duration-300">
+                            <div
+                                class="text-primary bg-primary/10 w-12 h-12 rounded-lg flex items-center justify-center">
+                                <span class="material-symbols-outlined text-3xl">forum</span>
+                            </div>
+                            <div class="flex flex-col gap-2">
+                                <div class="text-xs font-bold text-slate-400 uppercase tracking-tighter">Step 01</div>
+                                <h3 class="text-[#111418] dark:text-white text-lg font-bold leading-tight">Consultation
+                                </h3>
+                                <p class="text-[#617289] dark:text-slate-400 text-sm font-normal leading-relaxed">Define
+                                    your dream car's specifications, year of manufacture, and target budget with our
+                                    experts.</p>
+                            </div>
+                        </div>
+                        <!-- Step 2 -->
+                        <div
+                            class="flex flex-1 gap-5 rounded-xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900 p-8 flex-col hover:shadow-xl hover:-translate-y-1 transition-all duration-300">
+                            <div
+                                class="text-primary bg-primary/10 w-12 h-12 rounded-lg flex items-center justify-center">
+                                <span class="material-symbols-outlined text-3xl">pageview</span>
+                            </div>
+                            <div class="flex flex-col gap-2">
+                                <div class="text-xs font-bold text-slate-400 uppercase tracking-tighter">Step 02</div>
+                                <h3 class="text-[#111418] dark:text-white text-lg font-bold leading-tight">Auction
+                                    Selection</h3>
+                                <p class="text-[#617289] dark:text-slate-400 text-sm font-normal leading-relaxed">Access
+                                    daily verified auction listings and expert analysis of auction sheets.</p>
+                            </div>
+                        </div>
+                        <!-- Step 3 -->
+                        <div
+                            class="flex flex-1 gap-5 rounded-xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900 p-8 flex-col hover:shadow-xl hover:-translate-y-1 transition-all duration-300">
+                            <div
+                                class="text-primary bg-primary/10 w-12 h-12 rounded-lg flex items-center justify-center">
+                                <span class="material-symbols-outlined text-3xl">gavel</span>
+                            </div>
+                            <div class="flex flex-col gap-2">
+                                <div class="text-xs font-bold text-slate-400 uppercase tracking-tighter">Step 03</div>
+                                <h3 class="text-[#111418] dark:text-white text-lg font-bold leading-tight">Bidding &amp;
+                                    Purchase</h3>
+                                <p class="text-[#617289] dark:text-slate-400 text-sm font-normal leading-relaxed">We bid
+                                    on your behalf to secure the vehicle at the best market value without overpaying.
+                                </p>
+                            </div>
+                        </div>
+                        <!-- Step 4 -->
+                        <div
+                            class="flex flex-1 gap-5 rounded-xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900 p-8 flex-col hover:shadow-xl hover:-translate-y-1 transition-all duration-300">
+                            <div
+                                class="text-primary bg-primary/10 w-12 h-12 rounded-lg flex items-center justify-center">
+                                <span class="material-symbols-outlined text-3xl">directions_boat</span>
+                            </div>
+                            <div class="flex flex-col gap-2">
+                                <div class="text-xs font-bold text-slate-400 uppercase tracking-tighter">Step 04</div>
+                                <h3 class="text-[#111418] dark:text-white text-lg font-bold leading-tight">Inspection
+                                    &amp; Shipping</h3>
+                                <p class="text-[#617289] dark:text-slate-400 text-sm font-normal leading-relaxed">
+                                    Pre-export quality checks followed by secure ocean freight to the Port of Mombasa.
+                                </p>
+                            </div>
+                        </div>
+                        <!-- Step 5 -->
+                        <div
+                            class="flex flex-1 gap-5 rounded-xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900 p-8 flex-col hover:shadow-xl hover:-translate-y-1 transition-all duration-300">
+                            <div
+                                class="text-primary bg-primary/10 w-12 h-12 rounded-lg flex items-center justify-center">
+                                <span class="material-symbols-outlined text-3xl">description</span>
+                            </div>
+                            <div class="flex flex-col gap-2">
+                                <div class="text-xs font-bold text-slate-400 uppercase tracking-tighter">Step 05</div>
+                                <h3 class="text-[#111418] dark:text-white text-lg font-bold leading-tight">Customs
+                                    Clearance</h3>
+                                <p class="text-[#617289] dark:text-slate-400 text-sm font-normal leading-relaxed">
+                                    Professional handling of KRA duties, taxes, and all regulatory documentation.</p>
+                            </div>
+                        </div>
+                        <!-- Step 6 -->
+                        <div
+                            class="flex flex-1 gap-5 rounded-xl border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900 p-8 flex-col hover:shadow-xl hover:-translate-y-1 transition-all duration-300">
+                            <div
+                                class="text-primary bg-primary/10 w-12 h-12 rounded-lg flex items-center justify-center">
+                                <span class="material-symbols-outlined text-3xl">car_rental</span>
+                            </div>
+                            <div class="flex flex-col gap-2">
+                                <div class="text-xs font-bold text-slate-400 uppercase tracking-tighter">Step 06</div>
+                                <h3 class="text-[#111418] dark:text-white text-lg font-bold leading-tight">Final
+                                    Delivery</h3>
+                                <p class="text-[#617289] dark:text-slate-400 text-sm font-normal leading-relaxed">Your
+                                    car is registered, detailed, and delivered to your preferred location in Kenya.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <section class="flex flex-1 justify-center py-20 bg-white dark:bg-background-dark">
+                <div class="layout-content-container flex flex-col max-w-[1200px] flex-1 px-4 md:px-10">
+                    <div class="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-12">
+                        <div class="flex flex-col gap-3">
+                            <span class="text-primary font-bold uppercase tracking-widest text-xs">Available Locally</span>
+                            <h2
+                                class="text-[#111418] dark:text-white text-3xl md:text-4xl font-extrabold leading-tight tracking-tight">
+                                Hand-picked Premium Stock</h2>
+                            <p class="text-[#617289] dark:text-slate-400 text-base max-w-[600px]">
+                                High-grade units already cleared and ready for immediate delivery. These are not typical yard
+                                listings, but curated vehicles that meet our strict import standards.
+                            </p>
+                        </div>
+                        <a href="/vehicles.html"><button class="flex items-center gap-2 text-primary font-bold text-sm hover:underline transition-all">
+                            View All Local Units <span class="material-symbols-outlined text-lg">arrow_forward</span>
+                        </button>
+                        </a>
+                    </div>
+                    <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                        <div
+                            class="group flex flex-col bg-white dark:bg-slate-900 rounded-xl overflow-hidden border border-slate-200 dark:border-slate-800 transition-all hover:shadow-2xl hover:border-primary/30">
+                            <div class="relative aspect-[16/10] overflow-hidden">
+                                <div
+                                    class="absolute top-4 left-4 z-10 bg-primary text-white text-[10px] font-bold uppercase tracking-widest px-3 py-1 rounded-full shadow-lg">
+                                    Ready for Delivery
+                                </div>
+                                <img alt="Toyota Prado"
+                                    class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                                    src="https://lh3.googleusercontent.com/aida-public/AB6AXuALN-wtg7poJopWuxydpJkyL4Kns_LurkVTUkrx1mr2ANjsJ54mPg8unMm2bSe5M3NFTDKnsIyGc5d_BiBqIXgVciqBECglh3yUIk8QNRZDF0lVttI9UQzU0MGd-XtTqBi6dFj3PnU1qYRI4dy97UCFGB9oL-JLMrJWgRSJJO0bWNzOqRaQrUKELe3HuWC0ZluDpQd_sHsLyF8jZnvpRWHwcIrThvhaKxG8ImFhZ0oHE3OG1pcllnVDBmFNknjKFV6IUIVjrCSW4b8" />
+                            </div>
+                            <div class="p-6 flex flex-col gap-4">
+                                <div class="flex justify-between items-start">
+                                    <div>
+                                        <h3 class="text-[#111418] dark:text-white text-xl font-bold">Toyota Land Cruiser Prado</h3>
+                                        <p class="text-slate-400 font-medium text-sm">TX-L Package | Grade 4.5</p>
+                                    </div>
+                                    <span class="text-primary font-bold text-lg">2018</span>
+                                </div>
+                                <div
+                                    class="flex items-center gap-4 text-xs font-semibold text-slate-500 border-t border-slate-100 dark:border-slate-800 pt-4">
+                                    <span class="flex items-center gap-1"><span
+                                            class="material-symbols-outlined text-base">speed</span> 42k km</span>
+                                    <span class="flex items-center gap-1"><span
+                                            class="material-symbols-outlined text-base">local_gas_station</span> Petrol</span>
+                                    <span class="flex items-center gap-1"><span
+                                            class="material-symbols-outlined text-base">settings</span> Auto</span>
+                                </div>
+                                <button
+                                    class="w-full mt-2 bg-slate-100 dark:bg-slate-800 text-[#111418] dark:text-white font-bold py-3 rounded-lg hover:bg-primary hover:text-white transition-all duration-300">
+                                    View Details
+                                </button>
+                            </div>
+                        </div>
+                        <div
+                            class="group flex flex-col bg-white dark:bg-slate-900 rounded-xl overflow-hidden border border-slate-200 dark:border-slate-800 transition-all hover:shadow-2xl hover:border-primary/30">
+                            <div class="relative aspect-[16/10] overflow-hidden">
+                                <div
+                                    class="absolute top-4 left-4 z-10 bg-primary text-white text-[10px] font-bold uppercase tracking-widest px-3 py-1 rounded-full shadow-lg">
+                                    Duty Paid
+                                </div>
+                                <img alt="Subaru Forester"
+                                    class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                                    src="https://lh3.googleusercontent.com/aida-public/AB6AXuD2SheTD0PzdEagjs_aWRWjN48DJYrtSjQpJS96pKE7_eooKnLMEQG6sQaEBJwP6SyUFtXjl4um4XA-4JQJNm9ZOaV4qIeMoWFRJFYkl7RXnVN2VsvgXCYVjMgppmHOYQc5CEoFAOzsGAJNrjWT-SzWHOGKS31JrF0PwfKo7aMkv6oocZVGKdPUwVdv1O8oMTexrlvQskBIrJ6P8P6sj8MgZLvyLB03wVBMCR_45Nx7724hGNKAKfmZFcj9v7r0QPSJgdneVpVTKuU" />
+                            </div>
+                            <div class="p-6 flex flex-col gap-4">
+                                <div class="flex justify-between items-start">
+                                    <div>
+                                        <h3 class="text-[#111418] dark:text-white text-xl font-bold">Subaru Forester</h3>
+                                        <p class="text-slate-400 font-medium text-sm">S-Edition | Eyesight Tech</p>
+                                    </div>
+                                    <span class="text-primary font-bold text-lg">2017</span>
+                                </div>
+                                <div
+                                    class="flex items-center gap-4 text-xs font-semibold text-slate-500 border-t border-slate-100 dark:border-slate-800 pt-4">
+                                    <span class="flex items-center gap-1"><span
+                                            class="material-symbols-outlined text-base">speed</span> 58k km</span>
+                                    <span class="flex items-center gap-1"><span
+                                            class="material-symbols-outlined text-base">local_gas_station</span> Petrol</span>
+                                    <span class="flex items-center gap-1"><span
+                                            class="material-symbols-outlined text-base">settings</span> AWD</span>
+                                </div>
+                                <button
+                                    class="w-full mt-2 bg-slate-100 dark:bg-slate-800 text-[#111418] dark:text-white font-bold py-3 rounded-lg hover:bg-primary hover:text-white transition-all duration-300">
+                                    View Details
+                                </button>
+                            </div>
+                        </div>
+                        <div
+                            class="group flex flex-col bg-white dark:bg-slate-900 rounded-xl overflow-hidden border border-slate-200 dark:border-slate-800 transition-all hover:shadow-2xl hover:border-primary/30">
+                            <div class="relative aspect-[16/10] overflow-hidden">
+                                <div
+                                    class="absolute top-4 left-4 z-10 bg-primary text-white text-[10px] font-bold uppercase tracking-widest px-3 py-1 rounded-full shadow-lg">
+                                    Hand-Picked
+                                </div>
+                                <img alt="Toyota Harrier"
+                                    class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                                    src="https://lh3.googleusercontent.com/aida-public/AB6AXuDTlTA1kJPaH2qo97CyAeMuRl5LUjAv6Pr0tsdxpPf8mC0HpB9vZKYIuCsbgmOyBSY5UGaSNynD8IatcfCl52c-HvfeYudVxTZ4TZ9lbv7udgfs306toUrXSXJxgpFAjuuOAMCI0oZH1nHm9hPnTFK-vH5McBDYWAgdI579kK12OzfVCE7NMcVWzeH8UUqNR4Tss9Rhnmqp_RT4Jyy-7BFMgoUS7XqoUz-qHZgIr-_yJvw2ZxpwuRZt8ukABqGCRFtRFquF1TPpNHg" />
+                            </div>
+                            <div class="p-6 flex flex-col gap-4">
+                                <div class="flex justify-between items-start">
+                                    <div>
+                                        <h3 class="text-[#111418] dark:text-white text-xl font-bold">Toyota Harrier</h3>
+                                        <p class="text-slate-400 font-medium text-sm">Premium Advance Package</p>
+                                    </div>
+                                    <span class="text-primary font-bold text-lg">2019</span>
+                                </div>
+                                <div
+                                    class="flex items-center gap-4 text-xs font-semibold text-slate-500 border-t border-slate-100 dark:border-slate-800 pt-4">
+                                    <span class="flex items-center gap-1"><span
+                                            class="material-symbols-outlined text-base">speed</span> 31k km</span>
+                                    <span class="flex items-center gap-1"><span
+                                            class="material-symbols-outlined text-base">local_gas_station</span> Hybrid</span>
+                                    <span class="flex items-center gap-1"><span
+                                            class="material-symbols-outlined text-base">settings</span> Auto</span>
+                                </div>
+                                <button
+                                    class="w-full mt-2 bg-slate-100 dark:bg-slate-800 text-[#111418] dark:text-white font-bold py-3 rounded-lg hover:bg-primary hover:text-white transition-all duration-300">
+                                    View Details
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <!-- Feature Section: Why Choose Us -->
+            <section class="flex flex-1 justify-center py-20 bg-white dark:bg-background-dark">
+                <div class="layout-content-container flex flex-col max-w-[1200px] flex-1 px-4 md:px-10 @container">
+                    <div class="flex flex-col md:flex-row gap-12 items-start">
+                        <div class="flex flex-col gap-6 flex-1">
+                            <h2
+                                class="text-[#111418] dark:text-white tracking-tight text-3xl font-extrabold leading-tight @[480px]:text-4xl max-w-[720px]">
                                 Why Trust Kalida Motors?
                             </h2>
-<p class="text-[#617289] dark:text-slate-400 text-base font-normal leading-relaxed max-w-[720px]">
-                                We prioritize integrity in an industry often clouded by uncertainty. Our business model is built on absolute transparency, ensuring you know exactly where your money goes.
+                            <p
+                                class="text-[#617289] dark:text-slate-400 text-base font-normal leading-relaxed max-w-[720px]">
+                                We prioritize integrity in an industry often clouded by uncertainty. Our business model
+                                is built on absolute transparency, ensuring you know exactly where your money goes.
                             </p>
-<div class="flex flex-col gap-6 mt-4">
-<!-- Feature 1 -->
-<div class="flex gap-4 items-start">
-<div class="text-primary shrink-0">
-<span class="material-symbols-outlined text-2xl">verified_user</span>
-</div>
-<div>
-<h4 class="text-[#111418] dark:text-white font-bold mb-1">Auction Sheet Verification</h4>
-<p class="text-[#617289] dark:text-slate-400 text-sm">We provide original, untampered auction sheets. No "rolled back" odometers or hidden repairs.</p>
-</div>
-</div>
-<!-- Feature 2 -->
-<div class="flex gap-4 items-start">
-<div class="text-primary shrink-0">
-<span class="material-symbols-outlined text-2xl">payments</span>
-</div>
-<div>
-<h4 class="text-[#111418] dark:text-white font-bold mb-1">Fixed Service Fee</h4>
-<p class="text-[#617289] dark:text-slate-400 text-sm">No hidden markups. We charge a flat commission, and you pay the actual auction and tax costs.</p>
-</div>
-</div>
-<!-- Feature 3 -->
-<div class="flex gap-4 items-start">
-<div class="text-primary shrink-0">
-<span class="material-symbols-outlined text-2xl">local_shipping</span>
-</div>
-<div>
-<h4 class="text-[#111418] dark:text-white font-bold mb-1">Logistics Expertise</h4>
-<p class="text-[#617289] dark:text-slate-400 text-sm">Our established network ensures your car is handled with care throughout.</p>
-</div>
-</div>
-</div>
-</div>
-<div class="w-full md:w-1/3 bg-slate-50 dark:bg-slate-900 rounded-2xl p-8 border border-slate-200 dark:border-slate-800">
-<div class="flex flex-col gap-6 items-center text-center">
-<div class="size-16 rounded-full bg-primary/10 flex items-center justify-center text-primary mb-2">
-<span class="material-symbols-outlined text-4xl">contact_support</span>
-</div>
-<h3 class="text-xl font-bold dark:text-white">Ready to start?</h3>
-<p class="text-slate-500 dark:text-slate-400 text-sm">Speak to our consultants today and find out how much you can save by importing directly.</p>
-<button class="w-full bg-primary text-white font-bold py-4 rounded-lg shadow-lg hover:shadow-primary/30 transition-shadow">
+                            <div class="flex flex-col gap-6 mt-4">
+                                <!-- Feature 1 -->
+                                <div class="flex gap-4 items-start">
+                                    <div class="text-primary shrink-0">
+                                        <span class="material-symbols-outlined text-2xl">verified_user</span>
+                                    </div>
+                                    <div>
+                                        <h4 class="text-[#111418] dark:text-white font-bold mb-1">Auction Sheet
+                                            Verification</h4>
+                                        <p class="text-[#617289] dark:text-slate-400 text-sm">We provide original,
+                                            untampered auction sheets. No "rolled back" odometers or hidden repairs.</p>
+                                    </div>
+                                </div>
+                                <!-- Feature 2 -->
+                                <div class="flex gap-4 items-start">
+                                    <div class="text-primary shrink-0">
+                                        <span class="material-symbols-outlined text-2xl">payments</span>
+                                    </div>
+                                    <div>
+                                        <h4 class="text-[#111418] dark:text-white font-bold mb-1">Fixed Service Fee</h4>
+                                        <p class="text-[#617289] dark:text-slate-400 text-sm">No hidden markups. We
+                                            charge a flat commission, and you pay the actual auction and tax costs.</p>
+                                    </div>
+                                </div>
+                                <!-- Feature 3 -->
+                                <div class="flex gap-4 items-start">
+                                    <div class="text-primary shrink-0">
+                                        <span class="material-symbols-outlined text-2xl">local_shipping</span>
+                                    </div>
+                                    <div>
+                                        <h4 class="text-[#111418] dark:text-white font-bold mb-1">Logistics Expertise
+                                        </h4>
+                                        <p class="text-[#617289] dark:text-slate-400 text-sm">Our established network
+                                            ensures your car is handled with care throughout.</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div
+                            class="w-full md:w-1/3 bg-slate-50 dark:bg-slate-900 rounded-2xl p-8 border border-slate-200 dark:border-slate-800">
+                            <div class="flex flex-col gap-6 items-center text-center">
+                                <div
+                                    class="size-16 rounded-full bg-primary/10 flex items-center justify-center text-primary mb-2">
+                                    <span class="material-symbols-outlined text-4xl">contact_support</span>
+                                </div>
+                                <h3 class="text-xl font-bold dark:text-white">Ready to start?</h3>
+                                <p class="text-slate-500 dark:text-slate-400 text-sm">Speak to our consultants today and
+                                    find out how much you can save by importing directly.</p>
+                                <button
+                                    class="w-full bg-primary text-white font-bold py-4 rounded-lg shadow-lg hover:shadow-primary/30 transition-shadow">
                                     Book Free Consultation
                                 </button>
-<div class="text-xs text-slate-400 font-medium">No obligation to purchase</div>
-</div>
-</div>
-</div>
-</div>
-</section>
-<!-- Footer Section -->
-<footer class="bg-background-light dark:bg-background-dark/80 border-t border-slate-200 dark:border-slate-800 py-12 flex justify-center">
-<div class="layout-content-container flex flex-col max-w-[1200px] flex-1 px-4 md:px-10">
-<div class="grid grid-cols-1 md:grid-cols-4 gap-10">
-<div class="col-span-1 md:col-span-2 flex flex-col gap-4">
-<div class="flex items-center gap-2 text-primary">
-<div class="size-6">
-<svg fill="none" viewbox="0 0 48 48" xmlns="http://www.w3.org/2000/svg"><path d="M8.57829 8.57829C5.52816 11.6284 3.451 15.5145 2.60947 19.7452C1.76794 23.9758 2.19984 28.361 3.85056 32.3462C5.50128 36.3314 8.29667 39.7376 11.8832 42.134C15.4698 44.5305 19.6865 45.8096 24 45.8096C28.3135 45.8096 32.5302 44.5305 36.1168 42.134C39.7033 39.7375 42.4987 36.3314 44.1494 32.3462C45.8002 28.361 46.2321 23.9758 45.3905 19.7452C44.549 15.5145 42.4718 11.6284 39.4217 8.57829L24 24L8.57829 8.57829Z" fill="currentColor"></path></svg>
-</div>
-<span class="text-[#111418] dark:text-white font-extrabold">Kalida Motors Ltd</span>
-</div>
-<p class="text-slate-500 dark:text-slate-400 text-sm max-w-[320px]">
-                                Professional car importation services focused on quality, transparency and customer satisfaction.
+                                <div class="text-xs text-slate-400 font-medium">No obligation to purchase</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <!-- Footer Section -->
+            <footer
+                class="bg-background-light dark:bg-background-dark/80 border-t border-slate-200 dark:border-slate-800 py-12 flex justify-center">
+                <div class="layout-content-container flex flex-col max-w-[1200px] flex-1 px-4 md:px-10">
+                    <div class="grid grid-cols-1 md:grid-cols-4 gap-10">
+                        <div class="col-span-1 md:col-span-2 flex flex-col gap-4">
+                            <div class="flex items-center gap-2 text-primary">
+                                <div class="size-6">
+                                    <svg fill="none" viewbox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
+                                        <path
+                                            d="M8.57829 8.57829C5.52816 11.6284 3.451 15.5145 2.60947 19.7452C1.76794 23.9758 2.19984 28.361 3.85056 32.3462C5.50128 36.3314 8.29667 39.7376 11.8832 42.134C15.4698 44.5305 19.6865 45.8096 24 45.8096C28.3135 45.8096 32.5302 44.5305 36.1168 42.134C39.7033 39.7375 42.4987 36.3314 44.1494 32.3462C45.8002 28.361 46.2321 23.9758 45.3905 19.7452C44.549 15.5145 42.4718 11.6284 39.4217 8.57829L24 24L8.57829 8.57829Z"
+                                            fill="currentColor"></path>
+                                    </svg>
+                                </div>
+                                <span class="text-[#111418] dark:text-white font-extrabold">Kalida Motors Ltd</span>
+                            </div>
+                            <p class="text-slate-500 dark:text-slate-400 text-sm max-w-[320px]">
+                                Leading the way in professional car importation services focused on quality, transparency and customer
+                                satisfaction.
                             </p>
-</div>
-<div class="flex flex-col gap-4">
-<h5 class="text-[#111418] dark:text-white font-bold text-sm uppercase">Quick Links</h5>
-<nav class="flex flex-col gap-2">
-<a class="text-slate-500 dark:text-slate-400 text-sm hover:text-primary transition-colors" href="#">How it Works</a>
-<a class="text-slate-500 dark:text-slate-400 text-sm hover:text-primary transition-colors" href="#">Auction Guide</a>
-<a class="text-slate-500 dark:text-slate-400 text-sm hover:text-primary transition-colors" href="#">Taxes &amp; Duties</a>
-</nav>
-</div>
-<div class="flex flex-col gap-4">
-<h5 class="text-[#111418] dark:text-white font-bold text-sm uppercase">Contact</h5>
-<nav class="flex flex-col gap-2">
-<span class="text-slate-500 dark:text-slate-400 text-sm">Nairobi, Kenya</span>
-<a class="text-slate-500 dark:text-slate-400 text-sm hover:text-primary transition-colors" href="mailto:hello@kalidamotors.com">hello@kalidamotors.com</a>
-<span class="text-slate-500 dark:text-slate-400 text-sm font-bold">+254 718036460</span>
-</nav>
-</div>
-</div>
-<div class="mt-12 pt-8 border-t border-slate-200 dark:border-slate-800 text-center md:text-left">
-<p class="text-slate-400 text-xs">© 2026 Kalida Motors Ltd. All rights reserved.</p>
-</div>
-</div>
-</footer>
-</div>
-</div>
-</body></html>
+                        </div>
+                        <div class="flex flex-col gap-4">
+                            <h5 class="text-[#111418] dark:text-white font-bold text-sm uppercase">Quick Links</h5>
+                            <nav class="flex flex-col gap-2">
+                                <a class="text-slate-500 dark:text-slate-400 text-sm hover:text-primary transition-colors"
+                                    href="/process.html">How it Works</a>
+                                <a class="text-slate-500 dark:text-slate-400 text-sm hover:text-primary transition-colors"
+                                    href="/auction_guide.html">Auction Guide</a>
+                                <a class="text-slate-500 dark:text-slate-400 text-sm hover:text-primary transition-colors"
+                                    href="#">Taxes &amp; Duties</a>
+                            </nav>
+                        </div>
+                        <div class="flex flex-col gap-4">
+                            <h5 class="text-[#111418] dark:text-white font-bold text-sm uppercase">Contact</h5>
+                            <nav class="flex flex-col gap-2">
+                                <span class="text-slate-500 dark:text-slate-400 text-sm">Nairobi, Kenya</span>
+                                <a class="text-slate-500 dark:text-slate-400 text-sm hover:text-primary transition-colors"
+                                    href="mailto:hello@kalidamotors.com">hello@kalidamotors.com</a>
+                                <span class="text-slate-500 dark:text-slate-400 text-sm font-bold">+254 718036460 | +254
+                                    710753510 | +254 721718159</span>
+                            </nav>
+                        </div>
+                    </div>
+                    <div class="mt-12 pt-8 border-t border-slate-200 dark:border-slate-800 text-center md:text-left">
+                        <p class="text-slate-400 text-xs">© 2026 Kalida Motors Ltd. All rights reserved.</p>
+                    </div>
+                </div>
+            </footer>
+        </div>
+    </div>
+</body>
+
+</html>
