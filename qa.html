@@ -4,15 +4,21 @@
 
 <!DOCTYPE html>
 
-<html class="light" lang="en"><head>
-<meta charset="utf-8"/>
-<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-<title>Quality &amp; Assurance | Kalida Motors</title>
-<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
-<link href="https://fonts.googleapis.com/css2?family=Public+Sans:wght@300;400;500;600;700;800;900&amp;display=swap" rel="stylesheet"/>
-<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght@100..700,0..1&amp;display=swap" rel="stylesheet"/>
-<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
-<script id="tailwind-config">
+<html class="light" lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>Quality &amp; Assurance | Kalida Motors</title>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Public+Sans:wght@300;400;500;600;700;800;900&amp;display=swap"
+        rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght@100..700,0..1&amp;display=swap"
+        rel="stylesheet" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+        rel="stylesheet" />
+    <script id="tailwind-config">
         tailwind.config = {
             darkMode: "class",
             theme: {
@@ -35,205 +41,227 @@
             },
         }
     </script>
-<style>
+    <style>
         body {
             font-family: "Public Sans", sans-serif;
         }
+
         .material-symbols-outlined {
             font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
         }
     </style>
 </head>
+
 <body class="bg-background-light dark:bg-background-dark text-[#111418] dark:text-white antialiased">
-<div class="relative flex min-h-screen flex-col overflow-x-hidden">
-<!-- Navigation Bar -->
-<header class="flex items-center justify-between border-b border-solid border-[#dbe0e6] dark:border-[#2d3748] bg-white dark:bg-background-dark px-10 py-4 sticky top-0 z-50">
-<div class="flex items-center gap-4 text-[#111418] dark:text-white">
-<div class="size-6 text-primary">
-<svg fill="none" viewbox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
-<path d="M8.57829 8.57829C5.52816 11.6284 3.451 15.5145 2.60947 19.7452C1.76794 23.9758 2.19984 28.361 3.85056 32.3462C5.50128 36.3314 8.29667 39.7376 11.8832 42.134C15.4698 44.5305 19.6865 45.8096 24 45.8096C28.3135 45.8096 32.5302 44.5305 36.1168 42.134C39.7033 39.7375 42.4987 36.3314 44.1494 32.3462C45.8002 28.361 46.2321 23.9758 45.3905 19.7452C44.549 15.5145 42.4718 11.6284 39.4217 8.57829L24 24L8.57829 8.57829Z" fill="currentColor"></path>
-</svg>
-</div>
-<h2 class="text-lg font-bold leading-tight tracking-tight">Kalida Motors</h2>
-</div>
-<nav class="hidden md:flex flex-1 justify-center gap-8">
-<a class="text-sm font-medium hover:text-primary transition-colors" href="#">Home</a>
-<a class="text-sm font-medium hover:text-primary transition-colors" href="#">Inventory</a>
-<a class="text-sm font-medium hover:text-primary transition-colors" href="#">Process</a>
-<a class="text-sm font-bold text-primary" href="#">Quality &amp; Assurance</a>
-<a class="text-sm font-medium hover:text-primary transition-colors" href="#">Contact</a>
-</nav>
-<button class="flex min-w-[140px] cursor-pointer items-center justify-center rounded-lg h-10 px-4 bg-primary text-white text-sm font-bold transition-opacity hover:opacity-90">
-                Book Consultation
-            </button>
-</header>
-<main class="flex-1">
-<!-- Hero Section -->
-<section class="w-full bg-white dark:bg-background-dark px-4 md:px-40 py-10">
-<div class="relative overflow-hidden rounded-xl h-[480px] flex flex-col items-center justify-center text-center p-6 bg-cover bg-center" data-alt="Technical Japanese car auction inspection report document" style='background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.6)), url("https://lh3.googleusercontent.com/aida-public/AB6AXuBXfspicOepWQGMEgJmlUXTWc780EXhFvTz5qsSAikBR5ZKpoLMQ2XSdCgh9_Y6lG3JZ5YBZpKEgo6mLHN0tHx7EWLvO_75JYJ5rsqYY8XyapUmEZir6pGrY8tKFAFBlg7BBHbIYTRK8Hd1EtqyixPk8ckJGcJkskrYMlPUVTGvy3cnce4JhBYzy8jrMb0m9zYKwVvGh6hgZrgigHW_An9haBm3y3UPMrgojOwxaPybMdrkmVFIQgQgYon4bCkYOKMkAmFUlIqFPZM");'>
-<div class="max-w-[720px] space-y-4">
-<h1 class="text-white text-4xl md:text-5xl font-black leading-tight">
+    <div class="relative flex min-h-screen flex-col overflow-x-hidden">
+        {% include header.html %}
+        <main class="flex-1">
+            <!-- Hero Section -->
+            <section class="w-full bg-white dark:bg-background-dark px-4 md:px-40 py-10">
+                <div class="relative overflow-hidden rounded-xl h-[480px] flex flex-col items-center justify-center text-center p-6 bg-cover bg-center"
+                    data-alt="Technical Japanese car auction inspection report document"
+                    style='background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.6)), url("https://lh3.googleusercontent.com/aida-public/AB6AXuBXfspicOepWQGMEgJmlUXTWc780EXhFvTz5qsSAikBR5ZKpoLMQ2XSdCgh9_Y6lG3JZ5YBZpKEgo6mLHN0tHx7EWLvO_75JYJ5rsqYY8XyapUmEZir6pGrY8tKFAFBlg7BBHbIYTRK8Hd1EtqyixPk8ckJGcJkskrYMlPUVTGvy3cnce4JhBYzy8jrMb0m9zYKwVvGh6hgZrgigHW_An9haBm3y3UPMrgojOwxaPybMdrkmVFIQgQgYon4bCkYOKMkAmFUlIqFPZM");'>
+                    <div class="max-w-[720px] space-y-4">
+                        <h1 class="text-white text-4xl md:text-5xl font-black leading-tight">
                             Quality &amp; Assurance: Our Standards
                         </h1>
-<p class="text-white text-lg font-normal opacity-90">
-                            Transparency at every kilometer. We build trust through verified data and rigorous upfront inspections, ensuring your peace of mind before you bid.
+                        <p class="text-white text-lg font-normal opacity-90">
+                            Transparency at every kilometer. We build trust through verified data and rigorous upfront
+                            inspections, ensuring your peace of mind before you bid.
                         </p>
-<div class="flex flex-wrap justify-center gap-4 pt-4">
-<button class="h-12 px-8 bg-primary text-white font-bold rounded-lg hover:bg-primary/90 transition-all flex items-center gap-2">
-<span class="material-symbols-outlined">description</span>
+                        <div class="flex flex-wrap justify-center gap-4 pt-4">
+                            <button
+                                class="h-12 px-8 bg-primary text-white font-bold rounded-lg hover:bg-primary/90 transition-all flex items-center gap-2">
+                                <span class="material-symbols-outlined">description</span>
                                 View Inspection Checklist
                             </button>
-<button class="h-12 px-8 bg-white/20 backdrop-blur-md text-white border border-white/30 font-bold rounded-lg hover:bg-white/30 transition-all flex items-center gap-2">
+                            <button
+                                class="h-12 px-8 bg-white/20 backdrop-blur-md text-white border border-white/30 font-bold rounded-lg hover:bg-white/30 transition-all flex items-center gap-2">
                                 Download Sample Report
                             </button>
-</div>
-</div>
-</div>
-</section>
-<!-- Value Propositions (FeatureSection) -->
-<section class="max-w-[1280px] mx-auto px-4 md:px-40 py-16">
-<div class="flex flex-col gap-12">
-<div class="space-y-4">
-<h2 class="text-3xl md:text-4xl font-bold tracking-tight text-[#111418] dark:text-white">Why Kalida Motors?</h2>
-<p class="text-lg text-[#617289] dark:text-gray-400 max-w-2xl">
-                            We prioritize data-driven sourcing to ensure you get the vehicle quality you pay for. Our commitment is to eliminate the guesswork from importation.
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <!-- Value Propositions (FeatureSection) -->
+            <section class="max-w-[1280px] mx-auto px-4 md:px-40 py-16">
+                <div class="flex flex-col gap-12">
+                    <div class="space-y-4">
+                        <h2 class="text-3xl md:text-4xl font-bold tracking-tight text-[#111418] dark:text-white">Why
+                            Kalida Motors?</h2>
+                        <p class="text-lg text-[#617289] dark:text-gray-400 max-w-2xl">
+                            We prioritize data-driven sourcing to ensure you get the vehicle quality you pay for. Our
+                            commitment is to eliminate the guesswork from importation.
                         </p>
-</div>
-<div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-<!-- Card 1 -->
-<div class="flex flex-col gap-4 p-6 rounded-xl border border-[#dbe0e6] dark:border-[#2d3748] bg-white dark:bg-[#1c2632] hover:shadow-lg transition-shadow">
-<div class="w-12 h-12 rounded-lg bg-primary/10 flex items-center justify-center text-primary">
-<span class="material-symbols-outlined text-3xl">verified_user</span>
-</div>
-<h3 class="text-xl font-bold">Verified Auction Reports</h3>
-<p class="text-[#617289] dark:text-gray-400 leading-relaxed">
-                                Direct access to original source data. We provide the original Japanese Auction Sheets for every car, allowing you to see the true history.
+                    </div>
+                    <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                        <!-- Card 1 -->
+                        <div
+                            class="flex flex-col gap-4 p-6 rounded-xl border border-[#dbe0e6] dark:border-[#2d3748] bg-white dark:bg-[#1c2632] hover:shadow-lg transition-shadow">
+                            <div
+                                class="w-12 h-12 rounded-lg bg-primary/10 flex items-center justify-center text-primary">
+                                <span class="material-symbols-outlined text-3xl">verified_user</span>
+                            </div>
+                            <h3 class="text-xl font-bold">Verified Auction Reports</h3>
+                            <p class="text-[#617289] dark:text-gray-400 leading-relaxed">
+                                Direct access to original source data. We provide the original Auction Sheets for every
+                                car, allowing you to see the true history.
                             </p>
-</div>
-<!-- Card 2 -->
-<div class="flex flex-col gap-4 p-6 rounded-xl border border-[#dbe0e6] dark:border-[#2d3748] bg-white dark:bg-[#1c2632] hover:shadow-lg transition-shadow">
-<div class="w-12 h-12 rounded-lg bg-primary/10 flex items-center justify-center text-primary">
-<span class="material-symbols-outlined text-3xl">workspace_premium</span>
-</div>
-<h3 class="text-xl font-bold">High Auction Grades</h3>
-<p class="text-[#617289] dark:text-gray-400 leading-relaxed">
-                                We focus on excellence, primarily bidding on vehicles rated Grade 4.0 and above to guarantee structural integrity and minimal wear.
+                        </div>
+                        <!-- Card 2 -->
+                        <div
+                            class="flex flex-col gap-4 p-6 rounded-xl border border-[#dbe0e6] dark:border-[#2d3748] bg-white dark:bg-[#1c2632] hover:shadow-lg transition-shadow">
+                            <div
+                                class="w-12 h-12 rounded-lg bg-primary/10 flex items-center justify-center text-primary">
+                                <span class="material-symbols-outlined text-3xl">workspace_premium</span>
+                            </div>
+                            <h3 class="text-xl font-bold">High Auction Grades</h3>
+                            <p class="text-[#617289] dark:text-gray-400 leading-relaxed">
+                                We focus on excellence, primarily bidding on vehicles rated Grade 4.0 and above to
+                                guarantee structural integrity and minimal wear.
                             </p>
-</div>
-<!-- Card 3 -->
-<div class="flex flex-col gap-4 p-6 rounded-xl border border-[#dbe0e6] dark:border-[#2d3748] bg-white dark:bg-[#1c2632] hover:shadow-lg transition-shadow">
-<div class="w-12 h-12 rounded-lg bg-primary/10 flex items-center justify-center text-primary">
-<span class="material-symbols-outlined text-3xl">fact_check</span>
-</div>
-<h3 class="text-xl font-bold">Independent Inspections</h3>
-<p class="text-[#617289] dark:text-gray-400 leading-relaxed">
-                                Every vehicle undergoes third-party verification by QISJ or EAA before shipment, ensuring compliance with Kenyan standards.
+                        </div>
+                        <!-- Card 3 -->
+                        <div
+                            class="flex flex-col gap-4 p-6 rounded-xl border border-[#dbe0e6] dark:border-[#2d3748] bg-white dark:bg-[#1c2632] hover:shadow-lg transition-shadow">
+                            <div
+                                class="w-12 h-12 rounded-lg bg-primary/10 flex items-center justify-center text-primary">
+                                <span class="material-symbols-outlined text-3xl">fact_check</span>
+                            </div>
+                            <h3 class="text-xl font-bold">Independent Inspections</h3>
+                            <p class="text-[#617289] dark:text-gray-400 leading-relaxed">
+                                Every vehicle undergoes third-party verification by QISJ or EAA before shipment,
+                                ensuring compliance with Kenyan standards.
                             </p>
-</div>
-</div>
-</div>
-</section>
-<!-- Inspection Process Gallery & Details -->
-<section class="bg-white dark:bg-background-dark py-20 px-4 md:px-40 border-y border-[#dbe0e6] dark:border-[#2d3748]">
-<div class="max-w-[1280px] mx-auto">
-<div class="grid md:grid-cols-2 gap-16 items-center">
-<div class="space-y-6">
-<h2 class="text-3xl font-bold tracking-tight">Authentic Inspections</h2>
-<p class="text-[#617289] dark:text-gray-400 leading-relaxed">
-                                Our partners on the ground in Japan perform detailed 150-point physical checks. Unlike local showrooms, we provide high-resolution photos of the engine bay, chassis number, and suspension components before the car ever leaves the auction yard.
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <!-- Inspection Process Gallery & Details -->
+            <section
+                class="bg-white dark:bg-background-dark py-20 px-4 md:px-40 border-y border-[#dbe0e6] dark:border-[#2d3748]">
+                <div class="max-w-[1280px] mx-auto">
+                    <div class="grid md:grid-cols-2 gap-16 items-center">
+                        <div class="space-y-6">
+                            <h2 class="text-3xl font-bold tracking-tight">Authentic Inspections</h2>
+                            <p class="text-[#617289] dark:text-gray-400 leading-relaxed">
+                                Our partners on the ground perform detailed 150-point physical checks. We provide
+                                high-resolution photos of the engine bay, chassis number and suspension components
+                                before the car ever leaves the auction house.
                             </p>
-<ul class="space-y-4">
-<li class="flex items-start gap-3">
-<span class="material-symbols-outlined text-primary mt-1">check_circle</span>
-<div>
-<span class="font-bold">Mileage Verification</span>
-<p class="text-sm text-[#617289] dark:text-gray-400">Odometer readings are cross-checked against JEVIC/QISJ historical data.</p>
-</div>
-</li>
-<li class="flex items-start gap-3">
-<span class="material-symbols-outlined text-primary mt-1">check_circle</span>
-<div>
-<span class="font-bold">Mechanical Integrity</span>
-<p class="text-sm text-[#617289] dark:text-gray-400">Deep-dive engine diagnostics and structural damage assessment.</p>
-</div>
-</li>
-</ul>
-</div>
-<div class="grid grid-cols-2 gap-4">
-<img class="rounded-lg object-cover h-64 w-full" data-alt="Clean car engine bay with detailed inspection focus" src="https://lh3.googleusercontent.com/aida-public/AB6AXuD0DFzfva9YK1VGn1t8uzyk3HcWgTJOj8d4F1FEEGyNlOHiROlUOS2_TaEe_cOYI2ATKBhmA_lGxm7TnBhVd3wAnxcAtBE6lNL0R8zKYoRs8ZvbsXXvU5WPdfNsPeHE9lKcvpxKMFRP65RUfKbeXhyXw1e8-dnV4lHij06tl3a6-O53nAsYSa__Os4cOWJOZcJwyHUHeUUw8NskOOLJDhXPINfn0Z8qb5UHwc4KkQsj4pqBnYkmdJpQq6DoSWr9gWDWx-L38asiIX8"/>
-<img class="rounded-lg object-cover h-64 w-full" data-alt="Mechanic using digital diagnostic tool on dashboard" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBBC0CS4YKTPZ9C2_g1N_1ZJ_7FaG3G1rp6UEkPjGMzU-OpCta4FXSFe5VheV5o0y2nSjqpLK8yc2riVn6wnKHyAeOq1_HJqH6ItpSASY-xYetnn3IXCfhKdB0Au4KlOlRYFbPId2PxO3bxdcCFVsppqLnjxlP49QKGHmCbDl7Qhx2h7uxZT2oJasUg9uFM_4YDf8nAoz4W9DemSXLif9VdTcyK3joP8i9ZuIenx8tCvANdoE5dcS65yjLFo7C7gmoGjRhjK7_K1X0"/>
-</div>
-</div>
-</div>
-</section>
-<!-- Disclaimer & Clarity Section -->
-<section class="max-w-[1280px] mx-auto px-4 md:px-40 py-20">
-<div class="bg-primary/5 dark:bg-primary/10 border border-primary/20 rounded-2xl p-8 md:p-12 relative overflow-hidden">
-<div class="absolute -top-10 -right-10 opacity-10">
-<span class="material-symbols-outlined text-[200px]">info</span>
-</div>
-<div class="relative z-10 max-w-3xl">
-<div class="flex items-center gap-2 mb-4 text-primary font-bold uppercase tracking-wider text-sm">
-<span class="material-symbols-outlined">security</span>
+                            <ul class="space-y-4">
+                                <li class="flex items-start gap-3">
+                                    <span class="material-symbols-outlined text-primary mt-1">check_circle</span>
+                                    <div>
+                                        <span class="font-bold">Mileage Verification</span>
+                                        <p class="text-sm text-[#617289] dark:text-gray-400">Odometer readings are
+                                            cross-checked against JEVIC/QISJ historical data.</p>
+                                    </div>
+                                </li>
+                                <li class="flex items-start gap-3">
+                                    <span class="material-symbols-outlined text-primary mt-1">check_circle</span>
+                                    <div>
+                                        <span class="font-bold">Mechanical Integrity</span>
+                                        <p class="text-sm text-[#617289] dark:text-gray-400">Deep-dive engine
+                                            diagnostics and structural damage assessment.</p>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="grid grid-cols-2 gap-4">
+                            <img class="rounded-lg object-cover h-64 w-full"
+                                data-alt="Clean car engine bay with detailed inspection focus"
+                                src="https://lh3.googleusercontent.com/aida-public/AB6AXuD0DFzfva9YK1VGn1t8uzyk3HcWgTJOj8d4F1FEEGyNlOHiROlUOS2_TaEe_cOYI2ATKBhmA_lGxm7TnBhVd3wAnxcAtBE6lNL0R8zKYoRs8ZvbsXXvU5WPdfNsPeHE9lKcvpxKMFRP65RUfKbeXhyXw1e8-dnV4lHij06tl3a6-O53nAsYSa__Os4cOWJOZcJwyHUHeUUw8NskOOLJDhXPINfn0Z8qb5UHwc4KkQsj4pqBnYkmdJpQq6DoSWr9gWDWx-L38asiIX8" />
+                            <img class="rounded-lg object-cover h-64 w-full"
+                                data-alt="Mechanic using digital diagnostic tool on dashboard"
+                                src="https://lh3.googleusercontent.com/aida-public/AB6AXuBBC0CS4YKTPZ9C2_g1N_1ZJ_7FaG3G1rp6UEkPjGMzU-OpCta4FXSFe5VheV5o0y2nSjqpLK8yc2riVn6wnKHyAeOq1_HJqH6ItpSASY-xYetnn3IXCfhKdB0Au4KlOlRYFbPId2PxO3bxdcCFVsppqLnjxlP49QKGHmCbDl7Qhx2h7uxZT2oJasUg9uFM_4YDf8nAoz4W9DemSXLif9VdTcyK3joP8i9ZuIenx8tCvANdoE5dcS65yjLFo7C7gmoGjRhjK7_K1X0" />
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <!-- Disclaimer & Clarity Section -->
+            <section class="max-w-[1280px] mx-auto px-4 md:px-40 py-20">
+                <div
+                    class="bg-primary/5 dark:bg-primary/10 border border-primary/20 rounded-2xl p-8 md:p-12 relative overflow-hidden">
+                    <div class="absolute -top-10 -right-10 opacity-10">
+                        <span class="material-symbols-outlined text-[200px]">info</span>
+                    </div>
+                    <div class="relative z-10 max-w-3xl">
+                        <div
+                            class="flex items-center gap-2 mb-4 text-primary font-bold uppercase tracking-wider text-sm">
+                            <span class="material-symbols-outlined">security</span>
                             Disclaimer &amp; Clarity
                         </div>
-<h2 class="text-3xl font-bold mb-6">Our Commitment to Honesty</h2>
-<div class="space-y-4 text-[#111418] dark:text-gray-300">
-<p class="leading-relaxed">
-                                At Kalida Motors, we believe in radical transparency. While we do not offer traditional post-sale mechanical warranties, we replace that uncertainty with <span class="text-primary font-bold">rigorous upfront inspection reports.</span>
-</p>
-<p class="leading-relaxed">
-                                In the world of Japanese car imports, a warranty is often just a hidden cost added to the price. We choose instead to invest in <strong>Grade 4.0+ vehicles</strong> and <strong>independent third-party audits</strong> before purchase. This minimizes your risk far more effectively than any local warranty can.
+                        <h2 class="text-3xl font-bold mb-6">Our Commitment to Honesty</h2>
+                        <div class="space-y-4 text-[#111418] dark:text-gray-300">
+                            <p class="leading-relaxed">
+                                At Kalida Motors, we believe in radical transparency. While we do not offer traditional
+                                post-sale mechanical warranties, we replace that uncertainty with <span
+                                    class="text-primary font-bold">rigorous upfront inspection reports.</span>
                             </p>
-<p class="italic text-sm opacity-80">
-                                *All cars are imported "as-is" from Japan based on the Auction Sheet and QISJ/EAA inspections. You receive all original documentation for verification.
+                            <p class="leading-relaxed">
+                                In the world of car imports, a warranty is often just a hidden cost added to the price.
+                                We choose instead to invest in <strong>Grade 4.0+ vehicles</strong> and
+                                <strong>independent third-party audits</strong> before purchase. This minimizes your
+                                risk far more effectively than any local warranty can.
                             </p>
-</div>
-<div class="mt-8 flex gap-4">
-<button class="bg-primary text-white px-6 py-3 rounded-lg font-bold hover:shadow-lg transition-all">Learn More About Japanese Grading</button>
-</div>
-</div>
-</div>
-</section>
-<!-- Trust Badges -->
-<section class="pb-20 px-4">
-<div class="flex flex-wrap justify-center items-center gap-12 opacity-40 grayscale hover:grayscale-0 transition-all">
-<div class="text-center font-bold text-lg">QISJ</div>
-<div class="text-center font-bold text-lg">EAA</div>
-<div class="text-center font-bold text-lg">KEBS</div>
-<div class="text-center font-bold text-lg">JEVIC</div>
-</div>
-</section>
-</main>
-<!-- Footer -->
-<footer class="bg-white dark:bg-[#0a1018] border-t border-[#dbe0e6] dark:border-[#2d3748] px-4 md:px-40 py-12">
-<div class="max-w-[1280px] mx-auto grid md:grid-cols-4 gap-8">
-<div class="col-span-2">
-<h3 class="font-bold text-xl mb-4">Kalida Motors</h3>
-<p class="text-[#617289] dark:text-gray-400 max-w-xs leading-relaxed">
-                        Leading the way in transparent Japanese car importation for the Kenyan market. Quality verified, trust delivered.
+                            <p class="italic text-sm opacity-80">
+                                *All cars are imported "as-is" based on the Auction Sheet and QISJ/EAA inspections. You
+                                receive all original documentation for verification.
+                            </p>
+                        </div>
+                        <div class="mt-8 flex gap-4">
+                            <button
+                                class="bg-primary text-white px-6 py-3 rounded-lg font-bold hover:shadow-lg transition-all">Learn
+                                More About Japanese Grading</button>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <!-- Trust Badges -->
+            <section class="pb-20 px-4">
+                <div
+                    class="flex flex-wrap justify-center items-center gap-12 opacity-40 grayscale hover:grayscale-0 transition-all">
+                    <div class="text-center font-bold text-lg">QISJ</div>
+                    <div class="text-center font-bold text-lg">EAA</div>
+                    <div class="text-center font-bold text-lg">KEBS</div>
+                    <div class="text-center font-bold text-lg">JEVIC</div>
+                </div>
+            </section>
+        </main>
+        <!-- Footer -->
+        <footer class="bg-white dark:bg-[#0a1018] border-t border-[#dbe0e6] dark:border-[#2d3748] px-4 md:px-40 py-12">
+            <div class="max-w-[1280px] mx-auto grid md:grid-cols-4 gap-8">
+                <div class="col-span-2">
+                    <h3 class="font-bold text-xl mb-4">Kalida Motors</h3>
+                    <p class="text-[#617289] dark:text-gray-400 max-w-xs leading-relaxed">
+                        Leading the way in transparent car importation for the Kenyan market. Quality verified, trust
+                        delivered.
                     </p>
-</div>
-<div>
-<h4 class="font-bold mb-4 uppercase text-xs tracking-widest text-primary">Company</h4>
-<ul class="space-y-2 text-sm text-[#617289] dark:text-gray-400">
-<li><a class="hover:text-primary" href="#">About Us</a></li>
-<li><a class="hover:text-primary" href="#">Our Process</a></li>
-<li><a class="hover:text-primary" href="#">Inventory</a></li>
-</ul>
-</div>
-<div>
-<h4 class="font-bold mb-4 uppercase text-xs tracking-widest text-primary">Support</h4>
-<ul class="space-y-2 text-sm text-[#617289] dark:text-gray-400">
-<li><a class="hover:text-primary" href="#">Contact</a></li>
-<li><a class="hover:text-primary" href="#">Terms of Service</a></li>
-<li><a class="hover:text-primary" href="#">Quality Assurance</a></li>
-</ul>
-</div>
-</div>
-<div class="mt-12 pt-8 border-t border-[#dbe0e6] dark:border-[#2d3748] text-center text-xs text-[#617289] dark:text-gray-500">
+                </div>
+                <div>
+                    <h4 class="font-bold mb-4 uppercase text-xs tracking-widest text-primary">Company</h4>
+                    <ul class="space-y-2 text-sm text-[#617289] dark:text-gray-400">
+                        <li><a class="hover:text-primary" href="#">About Us</a></li>
+                        <li><a class="hover:text-primary" href="#">Our Process</a></li>
+                        <li><a class="hover:text-primary" href="#">Inventory</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="font-bold mb-4 uppercase text-xs tracking-widest text-primary">Support</h4>
+                    <ul class="space-y-2 text-sm text-[#617289] dark:text-gray-400">
+                        <li><a class="hover:text-primary" href="#">Contact</a></li>
+                        <li><a class="hover:text-primary" href="#">Terms of Service</a></li>
+                        <li><a class="hover:text-primary" href="#">Quality Assurance</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div
+                class="mt-12 pt-8 border-t border-[#dbe0e6] dark:border-[#2d3748] text-center text-xs text-[#617289] dark:text-gray-500">
                 © 2026 Kalida Motors Ltd. All rights reserved. Registered in Kenya.
             </div>
-</footer>
-</div>
-</body></html>
+        </footer>
+    </div>
+</body>
+
+</html>

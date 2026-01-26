@@ -1,0 +1,246 @@
+---
+
+---
+
+<!DOCTYPE html>
+<html class="light" lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>Import Inquiry: Personalized Request Form | Kalida Motors Ltd</title>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Public+Sans:wght@300;400;500;600;700;800;900&amp;display=swap"
+        rel="stylesheet" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+        rel="stylesheet" />
+    <script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#136dec",
+                        "background-light": "#f8fafc",
+                        "background-dark": "#101822",
+                    },
+                    fontFamily: {
+                        "display": ["Public Sans", "sans-serif"]
+                    },
+                    borderRadius: { "DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px" },
+                },
+            },
+        }
+    </script>
+    <style type="text/tailwindcss">
+        body {
+            font-family: "Public Sans", sans-serif;
+        }
+        .step-active {
+            @apply border-primary text-primary;
+        }
+        .step-inactive {
+            @apply border-slate-200 text-slate-400;
+        }
+    </style>
+</head>
+
+<body class="bg-background-light dark:bg-background-dark text-[#111418] dark:text-white transition-colors duration-300">
+    <div class="relative flex h-auto min-h-screen w-full flex-col group/design-root overflow-x-hidden">
+        <header
+            class="flex items-center justify-between whitespace-nowrap border-b border-solid border-slate-200 dark:border-slate-800 px-10 py-4 bg-white/80 dark:bg-background-dark/80 backdrop-blur-md sticky top-0 z-50">
+            <div class="flex items-center gap-3 text-[#111418] dark:text-white">
+                <div class="size-8 text-primary">
+                    <svg fill="none" viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
+                        <g clip-path="url(#clip0_6_319)">
+                            <path
+                                d="M8.57829 8.57829C5.52816 11.6284 3.451 15.5145 2.60947 19.7452C1.76794 23.9758 2.19984 28.361 3.85056 32.3462C5.50128 36.3314 8.29667 39.7376 11.8832 42.134C15.4698 44.5305 19.6865 45.8096 24 45.8096C28.3135 45.8096 32.5302 44.5305 36.1168 42.134C39.7033 39.7375 42.4987 36.3314 44.1494 32.3462C45.8002 28.361 46.2321 23.9758 45.3905 19.7452C44.549 15.5145 42.4718 11.6284 39.4217 8.57829L24 24L8.57829 8.57829Z"
+                                fill="currentColor"></path>
+                        </g>
+                        <defs>
+                            <clipPath id="clip0_6_319">
+                                <rect fill="white" height="48" width="48"></rect>
+                            </clipPath>
+                        </defs>
+                    </svg>
+                </div>
+                <h2 class="text-[#111418] dark:text-white text-xl font-extrabold leading-tight tracking-tight">Kalida
+                    Motors Ltd</h2>
+            </div>
+            <div class="flex flex-1 justify-end gap-8 items-center">
+                <nav class="hidden md:flex items-center gap-9">
+                    <a class="text-[#111418] dark:text-slate-300 text-sm font-semibold hover:text-primary dark:hover:text-primary transition-colors"
+                        href="#">How it Works</a>
+                    <a class="text-[#111418] dark:text-slate-300 text-sm font-semibold hover:text-primary dark:hover:text-primary transition-colors"
+                        href="#">Pricing</a>
+                </nav>
+                <a class="text-sm font-bold text-slate-500 hover:text-primary" href="/">Cancel</a>
+            </div>
+        </header>
+        <main class="flex-1 flex justify-center py-12">
+            <div class="layout-content-container flex max-w-[1200px] flex-1 px-4 md:px-10 gap-10">
+                <div
+                    class="flex-1 max-w-3xl bg-white dark:bg-slate-900 rounded-2xl shadow-sm border border-slate-200 dark:border-slate-800 overflow-hidden">
+                    <div class="border-b border-slate-100 dark:border-slate-800 px-8 py-6">
+                        <div class="flex justify-between items-center mb-6">
+                            <h1 class="text-2xl font-bold text-[#111418] dark:text-white">Import Inquiry Form</h1>
+                            <span class="text-sm font-medium text-slate-400">Step 1 of 3</span>
+                        </div>
+                        <div class="flex gap-4">
+                            <div class="h-2 flex-1 bg-primary rounded-full"></div>
+                            <div class="h-2 flex-1 bg-slate-100 dark:bg-slate-800 rounded-full"></div>
+                            <div class="h-2 flex-1 bg-slate-100 dark:bg-slate-800 rounded-full"></div>
+                        </div>
+                        <div class="flex justify-between mt-3">
+                            <span class="text-[10px] font-bold uppercase tracking-wider text-primary">Vehicle
+                                Preferences</span>
+                            <span class="text-[10px] font-bold uppercase tracking-wider text-slate-400">Budget &amp;
+                                Timeline</span>
+                            <span class="text-[10px] font-bold uppercase tracking-wider text-slate-400">Contact
+                                Details</span>
+                        </div>
+                    </div>
+                    <div class="p-8">
+                        <div class="mb-8">
+                            <h2 class="text-lg font-bold mb-1">Step 1: Vehicle Preferences</h2>
+                            <p class="text-slate-500 dark:text-slate-400 text-sm">Tell us exactly what you're looking
+                                for so we can find the perfect match.</p>
+                        </div>
+                        <form class="space-y-6">
+                            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                                <div class="flex flex-col gap-2">
+                                    <label class="text-sm font-bold text-slate-700 dark:text-slate-300">Vehicle
+                                        Brand</label>
+                                    <input
+                                        class="form-input rounded-lg border-slate-300 dark:border-slate-700 dark:bg-slate-800 focus:ring-primary focus:border-primary text-sm"
+                                        placeholder="e.g. Toyota, Mazda, Subaru" type="text" />
+                                </div>
+                                <div class="flex flex-col gap-2">
+                                    <label class="text-sm font-bold text-slate-700 dark:text-slate-300">Model
+                                        Name</label>
+                                    <input
+                                        class="form-input rounded-lg border-slate-300 dark:border-slate-700 dark:bg-slate-800 focus:ring-primary focus:border-primary text-sm"
+                                        placeholder="e.g. RAV4, CX-5, Forester" type="text" />
+                                </div>
+                                <div class="flex flex-col gap-2">
+                                    <label class="text-sm font-bold text-slate-700 dark:text-slate-300">Year Range (2017
+                                        - 2024)</label>
+                                    <div class="flex items-center gap-3">
+                                        <select
+                                            class="form-select flex-1 rounded-lg border-slate-300 dark:border-slate-700 dark:bg-slate-800 focus:ring-primary focus:border-primary text-sm">
+                                            <option>From</option>
+                                            <option>2017</option>
+                                            <option>2018</option>
+                                            <option>2019</option>
+                                            <option>2020</option>
+                                        </select>
+                                        <span class="text-slate-400">-</span>
+                                        <select
+                                            class="form-select flex-1 rounded-lg border-slate-300 dark:border-slate-700 dark:bg-slate-800 focus:ring-primary focus:border-primary text-sm">
+                                            <option>To</option>
+                                            <option>2021</option>
+                                            <option>2022</option>
+                                            <option>2023</option>
+                                            <option>2024</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="flex flex-col gap-2">
+                                    <label
+                                        class="text-sm font-bold text-slate-700 dark:text-slate-300">Transmission</label>
+                                    <select
+                                        class="form-select rounded-lg border-slate-300 dark:border-slate-700 dark:bg-slate-800 focus:ring-primary focus:border-primary text-sm">
+                                        <option>Any</option>
+                                        <option>Automatic</option>
+                                        <option>Manual</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div
+                                class="pt-10 mt-10 border-t border-slate-100 dark:border-slate-800 opacity-25 pointer-events-none">
+                                <h2 class="text-lg font-bold mb-6">Step 2: Budget &amp; Timeline</h2>
+                                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                                    <div class="flex flex-col gap-2">
+                                        <label class="text-sm font-bold">Target Budget (Ksh)</label>
+                                        <div class="relative">
+                                            <span
+                                                class="absolute left-3 top-1/2 -translate-y-1/2 text-slate-400 text-sm">KES</span>
+                                            <input class="pl-12 w-full rounded-lg border-slate-300 dark:bg-slate-800"
+                                                type="text" />
+                                        </div>
+                                    </div>
+                                    <div class="flex flex-col gap-2">
+                                        <label class="text-sm font-bold">Expected Delivery Timeline</label>
+                                        <select class="rounded-lg border-slate-300 dark:bg-slate-800">
+                                            <option>As soon as possible (4-6 weeks)</option>
+                                        </select>
+                                    </div>
+                                </div>
+                            </div>
+                            <div
+                                class="flex justify-end gap-4 pt-6 border-t border-slate-100 dark:border-slate-800 mt-8">
+                                <button class="px-6 py-3 text-sm font-bold text-slate-400 hover:text-slate-600"
+                                    type="button">Previous</button>
+                                <button
+                                    class="bg-primary text-white px-10 py-3 rounded-lg font-bold shadow-lg shadow-primary/20 hover:scale-[1.02] transition-all"
+                                    type="submit">Next Step</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+                <aside class="hidden lg:flex flex-col gap-6 w-[320px]">
+                    <div
+                        class="bg-white dark:bg-slate-900 p-6 rounded-2xl border border-slate-200 dark:border-slate-800">
+                        <h3 class="font-bold text-sm uppercase tracking-wider text-slate-400 mb-4">Direct Import
+                            Benefits</h3>
+                        <ul class="space-y-4">
+                            <li class="flex gap-3">
+                                <span class="material-symbols-outlined text-green-500 text-xl">verified</span>
+                                <div>
+                                    <p class="text-sm font-bold">Verified History</p>
+                                    <p class="text-xs text-slate-500">Every car includes a verified auction sheet.</p>
+                                </div>
+                            </li>
+                            <li class="flex gap-3">
+                                <span class="material-symbols-outlined text-green-500 text-xl">savings</span>
+                                <div>
+                                    <p class="text-sm font-bold">Cost Effective</p>
+                                    <p class="text-xs text-slate-500">Save up to 15% compared to local dealership
+                                        prices.</p>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="bg-primary/5 p-6 rounded-2xl border border-primary/20">
+                        <div
+                            class="size-10 bg-primary/10 rounded-lg flex items-center justify-center text-primary mb-4">
+                            <span class="material-symbols-outlined">support_agent</span>
+                        </div>
+                        <h3 class="font-bold text-lg mb-2 dark:text-white">Need Help?</h3>
+                        <p class="text-sm text-slate-600 dark:text-slate-400 mb-6">Our consultants are available to
+                            guide you through the process right now.</p>
+                        <a class="flex items-center justify-center gap-2 w-full bg-[#25D366] text-white font-bold py-3 rounded-lg hover:brightness-110 transition-all"
+                            href="#">
+                            <svg class="size-5" fill="currentColor" viewBox="0 0 24 24">
+                                <path
+                                    d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z">
+                                </path>
+                            </svg>
+                            Chat on WhatsApp
+                        </a>
+                    </div>
+                </aside>
+            </div>
+        </main>
+        <footer class="border-t border-slate-200 dark:border-slate-800 py-8 bg-white dark:bg-background-dark">
+            <div class="max-w-[1200px] mx-auto px-10 text-center">
+                <p class="text-slate-400 text-xs">© 2026 Kalida Motors Ltd. Professional Car Importation Service. All
+                    data is securely handled.</p>
+            </div>
+        </footer>
+    </div>
+
+</body>
+
+</html>
