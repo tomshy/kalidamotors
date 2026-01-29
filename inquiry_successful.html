@@ -15,6 +15,17 @@
         href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
         rel="stylesheet" />
     <script id="tailwind-config">
+        // Check if inquiry was actually submitted
+        const inquirySubmitted = sessionStorage.getItem('inquirySubmitted');
+
+        if (!inquirySubmitted) {
+            // Redirect to home if accessed directly
+            window.location.href = '/';
+        }
+
+        // Clear the flag so page can't be accessed again without new submission
+        sessionStorage.removeItem('inquirySubmitted');
+        sessionStorage.removeItem('inquiryData');
         tailwind.config = {
             darkMode: "class",
             theme: {
@@ -150,18 +161,19 @@
                         class="flex items-center justify-center gap-4 opacity-60 grayscale hover:grayscale-0 transition-all duration-500">
                         <span
                             class="text-xs uppercase tracking-widest font-bold text-gray-500 dark:text-gray-400">Trusted
-                            By 500+ Luxury Car Enthusiasts</span>
+                            For Honest and Transparent Imports</span>
                     </div>
                 </div>
             </div>
             <div class="mt-8 text-center text-gray-500 dark:text-gray-500 text-sm">
-                <p>Have a quick question? <a class="text-primary hover:underline" href="#">View our FAQs</a> or email us
-                    at hellp@kalidamotors.com</p>
+                <p>Have a quick question? <a class="text-primary hover:underline" href="faqs">View our FAQs</a> or email
+                    us
+                    at hello@kalidamotors.com</p>
             </div>
         </main>
         <footer
             class="py-6 px-10 flex flex-col md:flex-row justify-between items-center text-xs text-gray-500 dark:text-gray-400 gap-4">
-            <p>© 2024 Kalida Motors. All rights reserved.</p>
+            <p>© 2026 Kalida Motors. All rights reserved.</p>
             <div class="flex gap-6">
                 <a class="hover:text-primary transition-colors" href="#">Privacy Policy</a>
                 <a class="hover:text-primary transition-colors" href="#">Terms of Service</a>
