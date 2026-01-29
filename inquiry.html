@@ -8,7 +8,7 @@
 <head>
     <meta charset="utf-8" />
     <meta content="width=device-width, initial-scale=1.0" name="viewport" />
-    <title>Import Inquiry: Personalized Request Form | Kalida Motors Ltd</title>
+    <title>Import Inquiry: Personalized Request Form | Kalida Motors</title>
     <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
     <link href="https://fonts.googleapis.com/css2?family=Public+Sans:wght@300;400;500;600;700;800;900&amp;display=swap"
         rel="stylesheet" />
@@ -43,6 +43,25 @@
         .step-inactive {
             @apply border-slate-200 text-slate-400;
         }
+        .grade-chip:checked + label {
+            @apply bg-primary text-white border-primary;
+        }
+        .tooltip-trigger:hover .tooltip-content {
+            @apply visible opacity-100;
+        }
+        .form-step {
+            @apply hidden;
+        }
+        .form-step.active {
+            @apply block;
+        }
+        .error-message {
+            @apply text-red-500 text-xs mt-1;
+        }
+        .form-input.error,
+        .form-select.error {
+            @apply border-red-500 focus:ring-red-500 focus:border-red-500;
+        }
     </style>
 </head>
 
@@ -51,22 +70,8 @@
         <header
             class="flex items-center justify-between whitespace-nowrap border-b border-solid border-slate-200 dark:border-slate-800 px-10 py-4 bg-white/80 dark:bg-background-dark/80 backdrop-blur-md sticky top-0 z-50">
             <div class="flex items-center gap-3 text-[#111418] dark:text-white">
-                <div class="size-8 text-primary">
-                    <svg fill="none" viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
-                        <g clip-path="url(#clip0_6_319)">
-                            <path
-                                d="M8.57829 8.57829C5.52816 11.6284 3.451 15.5145 2.60947 19.7452C1.76794 23.9758 2.19984 28.361 3.85056 32.3462C5.50128 36.3314 8.29667 39.7376 11.8832 42.134C15.4698 44.5305 19.6865 45.8096 24 45.8096C28.3135 45.8096 32.5302 44.5305 36.1168 42.134C39.7033 39.7375 42.4987 36.3314 44.1494 32.3462C45.8002 28.361 46.2321 23.9758 45.3905 19.7452C44.549 15.5145 42.4718 11.6284 39.4217 8.57829L24 24L8.57829 8.57829Z"
-                                fill="currentColor"></path>
-                        </g>
-                        <defs>
-                            <clipPath id="clip0_6_319">
-                                <rect fill="white" height="48" width="48"></rect>
-                            </clipPath>
-                        </defs>
-                    </svg>
-                </div>
-                <h2 class="text-[#111418] dark:text-white text-xl font-extrabold leading-tight tracking-tight">Kalida
-                    Motors Ltd</h2>
+                <h2 class="text-[#111418] dark:text-white text-xl font-extrabold leading-tight tracking-tight"><a
+                        href="/"> KALIDA MOTORS </a></h2>
             </div>
             <div class="flex flex-1 justify-end gap-8 items-center">
                 <nav class="hidden md:flex items-center gap-9">
@@ -85,113 +90,268 @@
                     <div class="border-b border-slate-100 dark:border-slate-800 px-8 py-6">
                         <div class="flex justify-between items-center mb-6">
                             <h1 class="text-2xl font-bold text-[#111418] dark:text-white">Import Inquiry Form</h1>
-                            <span class="text-sm font-medium text-slate-400">Step 1 of 3</span>
+                            <span class="text-sm font-medium text-slate-400"><span id="currentStep">1</span> of 3</span>
                         </div>
                         <div class="flex gap-4">
-                            <div class="h-2 flex-1 bg-primary rounded-full"></div>
-                            <div class="h-2 flex-1 bg-slate-100 dark:bg-slate-800 rounded-full"></div>
-                            <div class="h-2 flex-1 bg-slate-100 dark:bg-slate-800 rounded-full"></div>
+                            <div id="progress1" class="h-2 flex-1 bg-primary rounded-full"></div>
+                            <div id="progress2" class="h-2 flex-1 bg-slate-100 dark:bg-slate-800 rounded-full"></div>
+                            <div id="progress3" class="h-2 flex-1 bg-slate-100 dark:bg-slate-800 rounded-full"></div>
                         </div>
                         <div class="flex justify-between mt-3">
-                            <span class="text-[10px] font-bold uppercase tracking-wider text-primary">Vehicle
+                            <span class="text-[10px] font-bold uppercase tracking-wider text-primary"
+                                id="label1">Vehicle
                                 Preferences</span>
-                            <span class="text-[10px] font-bold uppercase tracking-wider text-slate-400">Budget &amp;
+                            <span class="text-[10px] font-bold uppercase tracking-wider text-slate-400"
+                                id="label2">Budget &amp;
                                 Timeline</span>
-                            <span class="text-[10px] font-bold uppercase tracking-wider text-slate-400">Contact
+                            <span class="text-[10px] font-bold uppercase tracking-wider text-slate-400"
+                                id="label3">Contact
                                 Details</span>
                         </div>
                     </div>
                     <div class="p-8">
-                        <div class="mb-8">
-                            <h2 class="text-lg font-bold mb-1">Step 1: Vehicle Preferences</h2>
-                            <p class="text-slate-500 dark:text-slate-400 text-sm">Tell us exactly what you're looking
-                                for so we can find the perfect match.</p>
-                        </div>
-                        <form class="space-y-6">
-                            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-                                <div class="flex flex-col gap-2">
-                                    <label class="text-sm font-bold text-slate-700 dark:text-slate-300">Vehicle
-                                        Brand</label>
-                                    <input
-                                        class="form-input rounded-lg border-slate-300 dark:border-slate-700 dark:bg-slate-800 focus:ring-primary focus:border-primary text-sm"
-                                        placeholder="e.g. Toyota, Mazda, Subaru" type="text" />
+                        <form id="inquiryForm" class="space-y-6">
+                            <!-- STEP 1: Vehicle Preferences -->
+                            <div id="step1" class="form-step active">
+                                <div class="mb-8">
+                                    <h2 class="text-lg font-bold mb-1">Step 1: Vehicle Preferences</h2>
+                                    <p class="text-slate-500 dark:text-slate-400 text-sm">Tell us exactly what you're
+                                        looking
+                                        for so we can find the perfect match.</p>
                                 </div>
-                                <div class="flex flex-col gap-2">
-                                    <label class="text-sm font-bold text-slate-700 dark:text-slate-300">Model
-                                        Name</label>
-                                    <input
-                                        class="form-input rounded-lg border-slate-300 dark:border-slate-700 dark:bg-slate-800 focus:ring-primary focus:border-primary text-sm"
-                                        placeholder="e.g. RAV4, CX-5, Forester" type="text" />
-                                </div>
-                                <div class="flex flex-col gap-2">
-                                    <label class="text-sm font-bold text-slate-700 dark:text-slate-300">Year Range (2017
-                                        - 2024)</label>
-                                    <div class="flex items-center gap-3">
-                                        <select
-                                            class="form-select flex-1 rounded-lg border-slate-300 dark:border-slate-700 dark:bg-slate-800 focus:ring-primary focus:border-primary text-sm">
-                                            <option>From</option>
-                                            <option>2017</option>
-                                            <option>2018</option>
-                                            <option>2019</option>
-                                            <option>2020</option>
-                                        </select>
-                                        <span class="text-slate-400">-</span>
-                                        <select
-                                            class="form-select flex-1 rounded-lg border-slate-300 dark:border-slate-700 dark:bg-slate-800 focus:ring-primary focus:border-primary text-sm">
-                                            <option>To</option>
-                                            <option>2021</option>
-                                            <option>2022</option>
-                                            <option>2023</option>
-                                            <option>2024</option>
-                                        </select>
-                                    </div>
-                                </div>
-                                <div class="flex flex-col gap-2">
-                                    <label
-                                        class="text-sm font-bold text-slate-700 dark:text-slate-300">Transmission</label>
-                                    <select
-                                        class="form-select rounded-lg border-slate-300 dark:border-slate-700 dark:bg-slate-800 focus:ring-primary focus:border-primary text-sm">
-                                        <option>Any</option>
-                                        <option>Automatic</option>
-                                        <option>Manual</option>
-                                    </select>
-                                </div>
-                            </div>
-                            <div
-                                class="pt-10 mt-10 border-t border-slate-100 dark:border-slate-800 opacity-25 pointer-events-none">
-                                <h2 class="text-lg font-bold mb-6">Step 2: Budget &amp; Timeline</h2>
-                                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-                                    <div class="flex flex-col gap-2">
-                                        <label class="text-sm font-bold">Target Budget (Ksh)</label>
-                                        <div class="relative">
-                                            <span
-                                                class="absolute left-3 top-1/2 -translate-y-1/2 text-slate-400 text-sm">KES</span>
-                                            <input class="pl-12 w-full rounded-lg border-slate-300 dark:bg-slate-800"
-                                                type="text" />
+                                <div class="space-y-6">
+                                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                                        <div class="flex flex-col gap-2">
+                                            <label class="text-sm font-bold text-slate-700 dark:text-slate-300">Vehicle
+                                                Brand <span class="text-red-500">*</span></label>
+                                            <input id="brand"
+                                                class="form-input rounded-lg border-slate-300 dark:border-slate-700 dark:bg-slate-800 focus:ring-primary focus:border-primary text-sm"
+                                                placeholder="e.g. Toyota, Mazda, Subaru" type="text" />
+                                            <span class="error-message" id="brandError"></span>
+                                        </div>
+                                        <div class="flex flex-col gap-2">
+                                            <label class="text-sm font-bold text-slate-700 dark:text-slate-300">Model
+                                                Name <span class="text-red-500">*</span></label>
+                                            <input id="model"
+                                                class="form-input rounded-lg border-slate-300 dark:border-slate-700 dark:bg-slate-800 focus:ring-primary focus:border-primary text-sm"
+                                                placeholder="e.g. RAV4, CX-5, Forester" type="text" />
+                                            <span class="error-message" id="modelError"></span>
+                                        </div>
+                                        <div class="flex flex-col gap-2">
+                                            <label class="text-sm font-bold text-slate-700 dark:text-slate-300">Year
+                                                Range (2019
+                                                - 2025) <span class="text-red-500">*</span></label>
+                                            <div class="flex items-center gap-3">
+                                                <select id="yearFrom"
+                                                    class="form-select flex-1 rounded-lg border-slate-300 dark:border-slate-700 dark:bg-slate-800 focus:ring-primary focus:border-primary text-sm">
+                                                    <option value="">From</option>
+                                                    <option>2019</option>
+                                                    <option>2020</option>
+                                                    <option>2021</option>
+                                                    <option>2022</option>
+                                                    <option>2023</option>
+                                                    <option>2024</option>
+                                                    <option>2025</option>
+                                                </select>
+                                                <span class="text-slate-400">-</span>
+                                                <select id="yearTo"
+                                                    class="form-select flex-1 rounded-lg border-slate-300 dark:border-slate-700 dark:bg-slate-800 focus:ring-primary focus:border-primary text-sm">
+                                                    <option value="">To</option>
+                                                    <option>2019</option>
+                                                    <option>2020</option>
+                                                    <option>2021</option>
+                                                    <option>2022</option>
+                                                    <option>2023</option>
+                                                    <option>2024</option>
+                                                </select>
+                                            </div>
+                                            <span class="error-message" id="yearError"></span>
+                                        </div>
+                                        <div class="flex flex-col gap-2">
+                                            <label
+                                                class="text-sm font-bold text-slate-700 dark:text-slate-300">Transmission
+                                                <span class="text-red-500">*</span></label>
+                                            <select id="transmission"
+                                                class="form-select rounded-lg border-slate-300 dark:border-slate-700 dark:bg-slate-800 focus:ring-primary focus:border-primary text-sm">
+                                                <option value="">Select Transmission</option>
+                                                <option>Any</option>
+                                                <option>Automatic</option>
+                                                <option>Manual</option>
+                                            </select>
+                                            <span class="error-message" id="transmissionError"></span>
                                         </div>
                                     </div>
-                                    <div class="flex flex-col gap-2">
-                                        <label class="text-sm font-bold">Expected Delivery Timeline</label>
-                                        <select class="rounded-lg border-slate-300 dark:bg-slate-800">
-                                            <option>As soon as possible (4-6 weeks)</option>
-                                        </select>
+                                    <div class="flex flex-col gap-3 pt-2">
+                                        <div class="flex items-center gap-2">
+                                            <label
+                                                class="text-sm font-bold text-slate-700 dark:text-slate-300">Preferred
+                                                Auction Grade <span class="text-red-500">*</span></label>
+                                            <div class="relative tooltip-trigger flex items-center">
+                                                <span
+                                                    class="material-symbols-outlined text-slate-400 text-[18px] cursor-help">info</span>
+                                                <div
+                                                    class="tooltip-content invisible opacity-0 absolute left-full ml-3 top-1/2 -translate-y-1/2 w-72 p-4 bg-slate-800 text-white text-xs rounded-lg shadow-xl z-20 transition-all duration-200">
+                                                    <p class="font-bold mb-1">Expert Grade Guide:</p>
+                                                    <ul class="space-y-1.5 list-disc pl-4">
+                                                        <li><span class="font-bold">S/New:</span> Brand new or delivery
+                                                            mileage.
+                                                        </li>
+                                                        <li><span class="font-bold">Grade 4.5:</span> Excellent
+                                                            condition,
+                                                            minimal wear.</li>
+                                                        <li><span class="font-bold">Grade 4.0:</span> Very good, small
+                                                            repairable marks.</li>
+                                                        <li><span class="font-bold">Grade 3.5:</span> Good, visible
+                                                            surface
+                                                            scratches/dents.</li>
+                                                    </ul>
+                                                    <div
+                                                        class="absolute left-0 top-1/2 -translate-x-1 -translate-y-1/2 w-2 h-2 bg-slate-800 rotate-45">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="flex flex-wrap gap-3">
+                                            <div class="relative">
+                                                <input checked="" class="peer hidden grade-chip" id="grade_s"
+                                                    name="auction_grade" type="radio" value="s" />
+                                                <label
+                                                    class="flex items-center px-4 py-2 rounded-full border border-slate-200 dark:border-slate-700 text-sm font-medium cursor-pointer hover:border-primary transition-colors dark:text-slate-300 peer-checked:bg-primary peer-checked:text-white peer-checked:border-primary"
+                                                    for="grade_s">S / New</label>
+                                            </div>
+                                            <div class="relative">
+                                                <input class="peer hidden grade-chip" id="grade_45" name="auction_grade"
+                                                    type="radio" value="4.5" />
+                                                <label
+                                                    class="flex items-center px-4 py-2 rounded-full border border-slate-200 dark:border-slate-700 text-sm font-medium cursor-pointer hover:border-primary transition-colors dark:text-slate-300 peer-checked:bg-primary peer-checked:text-white peer-checked:border-primary"
+                                                    for="grade_45">Grade 4.5</label>
+                                            </div>
+                                            <div class="relative">
+                                                <input class="peer hidden grade-chip" id="grade_40" name="auction_grade"
+                                                    type="radio" value="4.0" />
+                                                <label
+                                                    class="flex items-center px-4 py-2 rounded-full border border-slate-200 dark:border-slate-700 text-sm font-medium cursor-pointer hover:border-primary transition-colors dark:text-slate-300 peer-checked:bg-primary peer-checked:text-white peer-checked:border-primary"
+                                                    for="grade_40">Grade 4.0</label>
+                                            </div>
+                                            <div class="relative">
+                                                <input class="peer hidden grade-chip" id="grade_35" name="auction_grade"
+                                                    type="radio" value="3.5" />
+                                                <label
+                                                    class="flex items-center px-4 py-2 rounded-full border border-slate-200 dark:border-slate-700 text-sm font-medium cursor-pointer hover:border-primary transition-colors dark:text-slate-300 peer-checked:bg-primary peer-checked:text-white peer-checked:border-primary"
+                                                    for="grade_35">Grade 3.5</label>
+                                            </div>
+                                        </div>
+                                        <span class="error-message" id="gradeError"></span>
+                                        <p class="text-[11px] text-slate-400">At Kalida Motors, we typically recommend
+                                            Grade 4.0
+                                            and above for the best long-term value.</p>
                                     </div>
                                 </div>
                             </div>
+
+                            <!-- STEP 2: Budget & Timeline -->
+                            <div id="step2" class="form-step">
+                                <div class="mb-8">
+                                    <h2 class="text-lg font-bold mb-1">Step 2: Budget &amp; Timeline</h2>
+                                    <p class="text-slate-500 dark:text-slate-400 text-sm">Help us understand your
+                                        financial parameters and delivery expectations.</p>
+                                </div>
+                                <div class="space-y-6">
+                                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                                        <div class="flex flex-col gap-2">
+                                            <label class="text-sm font-bold text-slate-700 dark:text-slate-300">Target
+                                                Budget (Ksh) <span class="text-red-500">*</span></label>
+                                            <div class="relative">
+                                                <span
+                                                    class="absolute left-3 top-1/2 -translate-y-1/2 text-slate-400 text-sm">KES</span>
+                                                <input id="budget"
+                                                    class="pl-12 w-full rounded-lg border border-slate-300 dark:border-slate-700 dark:bg-slate-800 focus:ring-primary focus:border-primary"
+                                                    type="text" placeholder="e.g. 1,500,000" />
+                                            </div>
+                                            <span class="error-message" id="budgetError"></span>
+                                        </div>
+                                        <div class="flex flex-col gap-2">
+                                            <label class="text-sm font-bold text-slate-700 dark:text-slate-300">Expected
+                                                Delivery Timeline <span class="text-red-500">*</span></label>
+                                            <select id="timeline"
+                                                class="rounded-lg border border-slate-300 dark:border-slate-700 dark:bg-slate-800 focus:ring-primary focus:border-primary">
+                                                <option value="">Select timeline</option>
+                                                <option>As soon as possible (4-6 weeks)</option>
+                                                <option>6-8 weeks</option>
+                                                <option>8-10 weeks</option>
+                                                <option>10+ weeks (flexible)</option>
+                                            </select>
+                                            <span class="error-message" id="timelineError"></span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- STEP 3: Contact Details -->
+                            <div id="step3" class="form-step">
+                                <div class="mb-8">
+                                    <h2 class="text-lg font-bold mb-1">Step 3: Contact Details</h2>
+                                    <p class="text-slate-500 dark:text-slate-400 text-sm">Provide your contact
+                                        information so we can reach you with updates.</p>
+                                </div>
+                                <div class="space-y-6">
+                                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                                        <div class="flex flex-col gap-2">
+                                            <label class="text-sm font-bold text-slate-700 dark:text-slate-300">Full
+                                                Name <span class="text-red-500">*</span></label>
+                                            <input id="fullName"
+                                                class="form-input rounded-lg border-slate-300 dark:border-slate-700 dark:bg-slate-800 focus:ring-primary focus:border-primary text-sm"
+                                                type="text" placeholder="John Doe" />
+                                            <span class="error-message" id="fullNameError"></span>
+                                        </div>
+                                        <div class="flex flex-col gap-2">
+                                            <label class="text-sm font-bold text-slate-700 dark:text-slate-300">Email
+                                                Address <span class="text-red-500">*</span></label>
+                                            <input id="email"
+                                                class="form-input rounded-lg border-slate-300 dark:border-slate-700 dark:bg-slate-800 focus:ring-primary focus:border-primary text-sm"
+                                                type="email" placeholder="john@example.com" />
+                                            <span class="error-message" id="emailError"></span>
+                                        </div>
+                                        <div class="flex flex-col gap-2">
+                                            <label class="text-sm font-bold text-slate-700 dark:text-slate-300">Phone
+                                                Number <span class="text-red-500">*</span></label>
+                                            <input id="phone"
+                                                class="form-input rounded-lg border-slate-300 dark:border-slate-700 dark:bg-slate-800 focus:ring-primary focus:border-primary text-sm"
+                                                type="tel" placeholder="+254 7XX XXX XXX" />
+                                            <span class="error-message" id="phoneError"></span>
+                                        </div>
+                                        <div class="flex flex-col gap-2">
+                                            <label
+                                                class="text-sm font-bold text-slate-700 dark:text-slate-300">County/Town
+                                                <span class="text-red-500">*</span></label>
+                                            <input id="county"
+                                                class="form-input rounded-lg border-slate-300 dark:border-slate-700 dark:bg-slate-800 focus:ring-primary focus:border-primary text-sm"
+                                                type="text" placeholder="e.g. Nairobi, Mombasa" />
+                                            <span class="error-message" id="countyError"></span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Navigation Buttons -->
                             <div
                                 class="flex justify-end gap-4 pt-6 border-t border-slate-100 dark:border-slate-800 mt-8">
-                                <button class="px-6 py-3 text-sm font-bold text-slate-400 hover:text-slate-600"
+                                <button id="prevBtn"
+                                    class="px-6 py-3 text-sm font-bold text-slate-400 hover:text-slate-600 hidden"
                                     type="button">Previous</button>
-                                <button
+                                <button id="nextBtn"
                                     class="bg-primary text-white px-10 py-3 rounded-lg font-bold shadow-lg shadow-primary/20 hover:scale-[1.02] transition-all"
-                                    type="submit">Next Step</button>
+                                    type="button">Next Step</button>
+                                <button id="submitBtn"
+                                    class="bg-green-500 text-white px-10 py-3 rounded-lg font-bold shadow-lg shadow-green-500/20 hover:scale-[1.02] transition-all hidden"
+                                    type="submit">Submit Inquiry</button>
                             </div>
                         </form>
                     </div>
                 </div>
                 <aside class="hidden lg:flex flex-col gap-6 w-[320px]">
                     <div
-                        class="bg-white dark:bg-slate-900 p-6 rounded-2xl border border-slate-200 dark:border-slate-800">
+                        class="bg-white dark:bg-slate-900 p-6 rounded-2xl border border-slate-200 dark:border-slate-800 shadow-sm">
                         <h3 class="font-bold text-sm uppercase tracking-wider text-slate-400 mb-4">Direct Import
                             Benefits</h3>
                         <ul class="space-y-4">
@@ -199,7 +359,8 @@
                                 <span class="material-symbols-outlined text-green-500 text-xl">verified</span>
                                 <div>
                                     <p class="text-sm font-bold">Verified History</p>
-                                    <p class="text-xs text-slate-500">Every car includes a verified auction sheet.</p>
+                                    <p class="text-xs text-slate-500">Every car includes a verified auction sheet and
+                                        Odometer verification.</p>
                                 </div>
                             </li>
                             <li class="flex gap-3">
@@ -208,6 +369,14 @@
                                     <p class="text-sm font-bold">Cost Effective</p>
                                     <p class="text-xs text-slate-500">Save up to 15% compared to local dealership
                                         prices.</p>
+                                </div>
+                            </li>
+                            <li class="flex gap-3">
+                                <span class="material-symbols-outlined text-green-500 text-xl">high_quality</span>
+                                <div>
+                                    <p class="text-sm font-bold">Expert Selection</p>
+                                    <p class="text-xs text-slate-500">We only bid on high-grade vehicles for our
+                                        clients.</p>
                                 </div>
                             </li>
                         </ul>
@@ -219,8 +388,8 @@
                         </div>
                         <h3 class="font-bold text-lg mb-2 dark:text-white">Need Help?</h3>
                         <p class="text-sm text-slate-600 dark:text-slate-400 mb-6">Our consultants are available to
-                            guide you through the process right now.</p>
-                        <a class="flex items-center justify-center gap-2 w-full bg-[#25D366] text-white font-bold py-3 rounded-lg hover:brightness-110 transition-all"
+                            guide you through the auction grade terminology.</p>
+                        <a class="flex items-center justify-center gap-2 w-full bg-[#25D366] text-white font-bold py-3 rounded-lg hover:brightness-110 transition-all shadow-md"
                             href="#">
                             <svg class="size-5" fill="currentColor" viewBox="0 0 24 24">
                                 <path
@@ -229,6 +398,22 @@
                             </svg>
                             Chat on WhatsApp
                         </a>
+                    </div>
+                    <div
+                        class="bg-slate-900 dark:bg-slate-800 p-6 rounded-2xl border border-slate-800 shadow-lg relative overflow-hidden group">
+                        <div
+                            class="absolute -right-4 -top-4 size-24 bg-primary/10 rounded-full blur-2xl group-hover:bg-primary/20 transition-all duration-500">
+                        </div>
+                        <div class="relative z-10">
+                            <h3 class="font-bold text-lg mb-2 text-white">Looking for something immediate?</h3>
+                            <p class="text-sm text-slate-300 mb-6">We have a hand-picked selection of high-grade units
+                                already in Kenya, cleared and ready for delivery.</p>
+                            <a class="flex items-center justify-center gap-2 w-full bg-white text-slate-900 font-bold py-3 rounded-lg hover:bg-slate-100 transition-all shadow-sm"
+                                href="vehicles">
+                                <span class="material-symbols-outlined text-[20px]">directions_car</span>
+                                View Local Stock
+                            </a>
+                        </div>
                     </div>
                 </aside>
             </div>
@@ -241,6 +426,217 @@
         </footer>
     </div>
 
+    <script>
+        const form = document.getElementById('inquiryForm');
+        const nextBtn = document.getElementById('nextBtn');
+        const prevBtn = document.getElementById('prevBtn');
+        const submitBtn = document.getElementById('submitBtn');
+        let currentStep = 1;
+
+        function showStep(step) {
+            document.querySelectorAll('.form-step').forEach(el => el.classList.remove('active'));
+            document.getElementById(`step${step}`).classList.add('active');
+
+            document.getElementById('currentStep').textContent = step;
+
+            // Update progress bars
+            for (let i = 1; i <= 3; i++) {
+                document.getElementById(`progress${i}`).classList.toggle('bg-primary', i <= step);
+                document.getElementById(`progress${i}`).classList.toggle('bg-slate-100', i > step);
+                document.getElementById(`progress${i}`).classList.toggle('dark:bg-slate-800', i > step);
+
+                document.getElementById(`label${i}`).classList.toggle('text-primary', i <= step);
+                document.getElementById(`label${i}`).classList.toggle('text-slate-400', i > step);
+            }
+
+            // Show/hide buttons
+            prevBtn.classList.toggle('hidden', step === 1);
+            nextBtn.classList.toggle('hidden', step === 3);
+            submitBtn.classList.toggle('hidden', step !== 3);
+
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+
+        function clearErrors() {
+            document.querySelectorAll('.error-message').forEach(el => el.textContent = '');
+            document.querySelectorAll('.form-input, .form-select').forEach(el => el.classList.remove('error'));
+        }
+
+        function validateStep(step) {
+            clearErrors();
+            let isValid = true;
+
+            if (step === 1) {
+                // Validate Step 1
+                const brand = document.getElementById('brand').value.trim();
+                const model = document.getElementById('model').value.trim();
+                const yearFrom = document.getElementById('yearFrom').value;
+                const yearTo = document.getElementById('yearTo').value;
+                const transmission = document.getElementById('transmission').value;
+                const gradeSelected = document.querySelector('input[name="auction_grade"]:checked');
+
+                if (!brand) {
+                    document.getElementById('brandError').textContent = 'Vehicle brand is required';
+                    document.getElementById('brand').classList.add('error');
+                    isValid = false;
+                }
+                if (!model) {
+                    document.getElementById('modelError').textContent = 'Model name is required';
+                    document.getElementById('model').classList.add('error');
+                    isValid = false;
+                }
+                if (!yearFrom) {
+                    document.getElementById('yearError').textContent = 'Start year is required';
+                    document.getElementById('yearFrom').classList.add('error');
+                    isValid = false;
+                }
+                if (!yearTo) {
+                    document.getElementById('yearError').textContent = 'End year is required';
+                    document.getElementById('yearTo').classList.add('error');
+                    isValid = false;
+                }
+                if (!transmission) {
+                    document.getElementById('transmissionError').textContent = 'Transmission type is required';
+                    document.getElementById('transmission').classList.add('error');
+                    isValid = false;
+                }
+                if (!gradeSelected) {
+                    document.getElementById('gradeError').textContent = 'Please select an auction grade';
+                    isValid = false;
+                }
+            } else if (step === 2) {
+                // Validate Step 2
+                const budget = document.getElementById('budget').value.trim();
+                const timeline = document.getElementById('timeline').value;
+
+                if (!budget) {
+                    document.getElementById('budgetError').textContent = 'Budget is required';
+                    document.getElementById('budget').classList.add('error');
+                    isValid = false;
+                }
+                if (!timeline) {
+                    document.getElementById('timelineError').textContent = 'Timeline is required';
+                    document.getElementById('timeline').classList.add('error');
+                    isValid = false;
+                }
+            } else if (step === 3) {
+                // Validate Step 3
+                const fullName = document.getElementById('fullName').value.trim();
+                const email = document.getElementById('email').value.trim();
+                const phone = document.getElementById('phone').value.trim();
+                const county = document.getElementById('county').value.trim();
+                const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+                if (!fullName) {
+                    document.getElementById('fullNameError').textContent = 'Full name is required';
+                    document.getElementById('fullName').classList.add('error');
+                    isValid = false;
+                }
+                if (!email) {
+                    document.getElementById('emailError').textContent = 'Email is required';
+                    document.getElementById('email').classList.add('error');
+                    isValid = false;
+                } else if (!emailRegex.test(email)) {
+                    document.getElementById('emailError').textContent = 'Please enter a valid email';
+                    document.getElementById('email').classList.add('error');
+                    isValid = false;
+                }
+                if (!phone) {
+                    document.getElementById('phoneError').textContent = 'Phone number is required';
+                    document.getElementById('phone').classList.add('error');
+                    isValid = false;
+                }
+                if (!county) {
+                    document.getElementById('countyError').textContent = 'County/region is required';
+                    document.getElementById('county').classList.add('error');
+                    isValid = false;
+                }
+            }
+
+            return isValid;
+        }
+
+        nextBtn.addEventListener('click', (e) => {
+            e.preventDefault();
+            if (validateStep(currentStep)) {
+                currentStep++;
+                showStep(currentStep);
+            }
+        });
+
+        prevBtn.addEventListener('click', (e) => {
+            e.preventDefault();
+            currentStep--;
+            showStep(currentStep);
+        });
+
+        submitBtn.addEventListener('click', (e) => {
+            e.preventDefault();
+            if (validateStep(currentStep)) {
+                // Collect form data
+                const formData = {
+                    brand: document.getElementById('brand').value,
+                    model: document.getElementById('model').value,
+                    yearFrom: document.getElementById('yearFrom').value,
+                    yearTo: document.getElementById('yearTo').value,
+                    transmission: document.getElementById('transmission').value,
+                    grade: document.querySelector('input[name="auction_grade"]:checked').value,
+                    budget: document.getElementById('budget').value,
+                    timeline: document.getElementById('timeline').value,
+                    fullName: document.getElementById('fullName').value,
+                    email: document.getElementById('email').value,
+                    phone: document.getElementById('phone').value,
+                    county: document.getElementById('county').value
+                };
+
+                // Disable submit button during submission
+                submitBtn.disabled = true;
+                submitBtn.textContent = 'Submitting...';
+
+                // Google Forms endpoint (replace with your actual Google Form ID)
+                const formId = '1FAIpQLSdAXB0gZzSygP_MjMCyk_uXppAPqU2InnvQAnFWTZdxFfm9Jg'; //https://docs.google.com/forms/d/e/1FAIpQLSdAXB0gZzSygP_MjMCyk_uXppAPqU2InnvQAnFWTZdxFfm9Jg/viewform?usp=publish-editor
+                const googleFormUrl = `https://docs.google.com/forms/d/e/${formId}/formResponse`;
+
+                // Map form fields to Google Form field IDs (you need to replace these)
+                const googleFormData = new FormData();
+                googleFormData.append('entry.145607975', formData.brand);           // Replace XXXXXXXX1 with actual entry ID
+                googleFormData.append('entry.355619294', formData.model);           // Replace XXXXXXXX2 with actual entry ID
+                googleFormData.append('entry.1189470511', formData.yearFrom);        // Replace XXXXXXXX3 with actual entry ID
+                googleFormData.append('entry.245821584', formData.yearTo);          // Replace XXXXXXXX4 with actual entry ID
+                googleFormData.append('entry.645419151', formData.transmission);    // Replace XXXXXXXX5 with actual entry ID
+                googleFormData.append('entry.1550790971', formData.grade);           // Replace XXXXXXXX6 with actual entry ID
+                googleFormData.append('entry.848195895', formData.budget);          // Replace XXXXXXXX7 with actual entry ID
+                googleFormData.append('entry.1618198879', formData.timeline);        // Replace XXXXXXXX8 with actual entry ID
+                googleFormData.append('entry.395591527', formData.fullName);        // Replace XXXXXXXX9 with actual entry ID
+                googleFormData.append('entry.395591527', formData.email);          // Replace XXXXXXXX10 with actual entry ID
+                googleFormData.append('entry.581968176', formData.phone);          // Replace XXXXXXXX11 with actual entry ID
+                googleFormData.append('entry.1836492600', formData.county);         // Replace XXXXXXXX12 with actual entry ID
+
+                // Submit to Google Forms
+                fetch(googleFormUrl, {
+                    method: 'POST',
+                    body: googleFormData,
+                    mode: 'no-cors'
+                })
+                    .then(() => {
+                        // Store in sessionStorage to verify on success page
+                        sessionStorage.setItem('inquirySubmitted', 'true');
+                        sessionStorage.setItem('inquiryData', JSON.stringify(formData));
+                        // Redirect to success page
+                        window.location.href = 'inquiry_successful.html';
+                    })
+                    .catch((error) => {
+                        console.error('Error:', error);
+                        submitBtn.disabled = false;
+                        submitBtn.textContent = 'Submit Inquiry';
+                        alert('Error submitting form. Please try again.');
+                    });
+            }
+        });
+
+        // Initialize
+        showStep(1);
+    </script>
 </body>
 
 </html>
