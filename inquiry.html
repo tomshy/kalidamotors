@@ -389,7 +389,8 @@
                         <h3 class="font-bold text-lg mb-2 dark:text-white">Need Help?</h3>
                         <p class="text-sm text-slate-600 dark:text-slate-400 mb-6">Our consultants are available to
                             guide you through the auction grade terminology.</p>
-                        <a class="flex items-center justify-center gap-2 w-full bg-[#25D366] text-white font-bold py-3 rounded-lg hover:brightness-110 transition-all shadow-md"
+                        <a id="whatsappChatBtn"
+                            class="flex items-center justify-center gap-2 w-full bg-[#25D366] text-white font-bold py-3 rounded-lg hover:brightness-110 transition-all shadow-md"
                             href="#">
                             <svg class="size-5" fill="currentColor" viewBox="0 0 24 24">
                                 <path
@@ -636,6 +637,35 @@
 
         // Initialize
         showStep(1);
+        // WhatsApp open: app on mobile, web on desktop (with fallback)
+        (function () {
+            function openWhatsAppChat(e) {
+                if (e && e.preventDefault) e.preventDefault();
+                const phone = '254718036460'; 
+                const message = encodeURIComponent('Hello Kalida Motors, I need help with an import inquiry.');
+                const ua = navigator.userAgent || navigator.vendor || window.opera;
+                const isMobile = /Android|iPhone|iPad|iPod|Opera Mini|IEMobile|WPDesktop/i.test(ua);
+
+                if (isMobile) {
+                    // Try to open the native app first
+                    window.location.href = `whatsapp://send?phone=${phone}&text=${message}`;
+                    // Fallback to API after a short delay (if app not installed)
+                    setTimeout(function () {
+                        window.open(`https://api.whatsapp.com/send?phone=${phone}&text=${message}`, '_blank');
+                    }, 800);
+                } else {
+                    // Desktop -> open WhatsApp Web in new tab
+                    window.open(`https://web.whatsapp.com/send?phone=${phone}&text=${message}`, '_blank');
+                }
+                return false;
+            }
+
+            // Attach handler once DOM is ready
+            document.addEventListener('DOMContentLoaded', function () {
+                const btn = document.getElementById('whatsappChatBtn');
+                if (btn) btn.addEventListener('click', openWhatsAppChat);
+            });
+        })();
     </script>
 </body>
 
