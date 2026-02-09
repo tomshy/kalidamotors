@@ -1,20 +1,95 @@
-<!-- Top Navigation Bar -->
+<!-- Top Navigation Bar (responsive with mobile hamburger) -->
 <header
-class="sticky top-0 z-50 flex items-center justify-between whitespace-nowrap border-b border-solid border-slate-200 dark:border-slate-800 px-10 py-4 bg-white/80 dark:bg-background-dark/80 backdrop-blur-md">
-<div class="flex items-center gap-3 text-[#111418] dark:text-white">
-    <h2 class="text-[#111418] dark:text-white text-xl font-extrabold leading-tight tracking-tight"><a
-            href="index.html"> KALIDA MOTORS </a></h2>
-</div>
-<div class="flex flex-1 justify-end gap-8 items-center">
-    <nav class="hidden md:flex items-center gap-9">
-        <a class="text-[#111418] dark:text-slate-300 text-sm font-semibold hover:text-primary dark:hover:text-primary transition-colors"
-            href="process">How it Works</a>
-        <a class="text-[#111418] dark:text-slate-300 text-sm font-semibold hover:text-primary dark:hover:text-primary transition-colors" href="vehicles">Available Locally</a>
-        <a class="text-[#111418] dark:text-slate-300 text-sm font-semibold hover:text-primary dark:hover:text-primary transition-colors" href="pricing">Pricing</a>
-    </nav>
+  class="sticky top-0 z-50 flex items-center justify-between whitespace-nowrap border-b border-solid border-slate-200 dark:border-slate-800 px-4 md:px-10 py-3 bg-white/80 dark:bg-background-dark/80 backdrop-blur-md">
+  <div class="flex items-center gap-3 text-[#111418] dark:text-white">
+    <h2 class="text-[#111418] dark:text-white text-xl font-extrabold leading-tight tracking-tight">
+      <a href="index.html"> KALIDA MOTORS </a>
+    </h2>
+  </div>
+
+  <!-- Desktop nav -->
+  <nav class="hidden md:flex items-center gap-9">
+    <a class="text-[#111418] dark:text-slate-300 text-sm font-semibold hover:text-primary dark:hover:text-primary transition-colors"
+       href="process">How it Works</a>
+    <a class="text-[#111418] dark:text-slate-300 text-sm font-semibold hover:text-primary dark:hover:text-primary transition-colors"
+       href="vehicles">Available Locally</a>
+    <a class="text-[#111418] dark:text-slate-300 text-sm font-semibold hover:text-primary dark:hover:text-primary transition-colors"
+       href="pricing">Pricing</a>
+  </nav>
+
+  <div class="flex items-center gap-4">
+    <!-- Desktop Start Inquiry (visible md+) -->
     <a href="inquiry"
-       class="flex min-w-[140px] cursor-pointer items-center justify-center overflow-hidden rounded-lg h-10 px-5 bg-primary text-white text-sm font-bold leading-normal tracking-wide hover:brightness-110 transition-all">
+       class="hidden md:inline-flex flex-shrink-0 items-center justify-center overflow-hidden rounded-lg h-10 px-5 bg-primary text-white text-sm font-bold leading-normal tracking-wide hover:brightness-110 transition-all">
        <span class="truncate">Start Inquiry</span>
     </a>
-</div>
+
+    <!-- Mobile hamburger (visible <md) -->
+    <button id="mobileMenuButton" aria-expanded="false" aria-controls="mobileMenu"
+      class="md:hidden inline-flex items-center justify-center p-2 rounded-lg text-[#111418] dark:text-white hover:bg-slate-100 dark:hover:bg-slate-800 transition">
+      <!-- Open icon -->
+      <svg id="iconOpen" class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+          d="M4 6h16M4 12h16M4 18h16"></path>
+      </svg>
+      <!-- Close icon -->
+      <svg id="iconClose" class="w-6 h-6 hidden" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+          d="M6 18L18 6M6 6l12 12"></path>
+      </svg>
+    </button>
+  </div>
 </header>
+
+<!-- Mobile menu (hidden by default) -->
+<div id="mobileMenu" class="md:hidden hidden border-b border-slate-200 dark:border-slate-800 bg-white dark:bg-background-dark">
+  <div class="px-4 py-3 space-y-1">
+    <a class="block px-3 py-2 rounded text-sm font-medium text-[#111418] dark:text-slate-300 hover:bg-slate-50 dark:hover:bg-slate-800"
+       href="process">How it Works</a>
+    <a class="block px-3 py-2 rounded text-sm font-medium text-[#111418] dark:text-slate-300 hover:bg-slate-50 dark:hover:bg-slate-800"
+       href="vehicles">Available Locally</a>
+    <a class="block px-3 py-2 rounded text-sm font-medium text-[#111418] dark:text-slate-300 hover:bg-slate-50 dark:hover:bg-slate-800"
+       href="pricing">Pricing</a>
+    <a class="block w-full text-center mt-2 px-3 py-2 rounded bg-primary text-white font-bold"
+       href="inquiry">Start Inquiry</a>
+  </div>
+</div>
+
+<script>
+  (function () {
+    document.addEventListener('DOMContentLoaded', function () {
+      const btn = document.getElementById('mobileMenuButton');
+      const menu = document.getElementById('mobileMenu');
+      const iconOpen = document.getElementById('iconOpen');
+      const iconClose = document.getElementById('iconClose');
+
+      if (!btn || !menu) return;
+
+      function closeMenu() {
+        menu.classList.add('hidden');
+        btn.setAttribute('aria-expanded', 'false');
+        iconOpen.classList.remove('hidden');
+        iconClose.classList.add('hidden');
+      }
+      function openMenu() {
+        menu.classList.remove('hidden');
+        btn.setAttribute('aria-expanded', 'true');
+        iconOpen.classList.add('hidden');
+        iconClose.classList.remove('hidden');
+      }
+      btn.addEventListener('click', function () {
+        const isOpen = btn.getAttribute('aria-expanded') === 'true';
+        if (isOpen) closeMenu();
+        else openMenu();
+      });
+
+      // Close when any mobile link is clicked
+      menu.querySelectorAll('a').forEach(a => a.addEventListener('click', closeMenu));
+
+      // Hide mobile menu if viewport becomes >= md (desktop) on resize
+      window.addEventListener('resize', function () {
+        if (window.innerWidth >= 768) closeMenu();
+      });
+    });
+  })();
+</script>
