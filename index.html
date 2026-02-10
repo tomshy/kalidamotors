@@ -223,15 +223,48 @@
                         <div
                             class="group flex flex-col bg-white dark:bg-slate-900 rounded-xl overflow-hidden border border-slate-200 dark:border-slate-800 transition-all hover:shadow-2xl hover:border-primary/30">
                             <div class="relative aspect-[16/10] overflow-hidden">
+                                <!-- Image Carousel Container -->
+                                <div class="carousel-container relative w-full h-full overflow-hidden" data-slides="{% if item.images %}{{ item.images.size }}{% else %}1{% endif %}">
+                                    <div class="carousel-track flex transition-transform duration-300 ease-out h-full w-full">
+                                        {% if item.images %}
+                                            {% for image in item.images %}
+                                            <div class="carousel-slide relative flex-shrink-0 h-full w-full">
+                                                <div class="absolute inset-0 bg-cover bg-center" style="background-image: url('{{ image }}');"></div>
+                                            </div>
+                                            {% endfor %}
+                                        {% else %}
+                                            <div class="carousel-slide relative flex-shrink-0 w-full h-full">
+                                                <div class="absolute inset-0 bg-cover bg-center" style="background-image: url('{{ item.image }}');"></div>
+                                            </div>
+                                        {% endif %}
+                                    </div>
+
+                                    <!-- Navigation Arrows (show only if multiple images) -->
+                                    {% if item.images and item.images.size > 1 %}
+                                    <button onclick="prevImage(event, this)" class="carousel-prev absolute left-2 top-1/2 -translate-y-1/2 w-8 h-8 bg-black/50 hover:bg-black/70 text-white rounded-full flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity z-10">
+                                        <span class="material-symbols-outlined text-sm">chevron_left</span>
+                                    </button>
+                                    <button onclick="nextImage(event, this)" class="carousel-next absolute right-2 top-1/2 -translate-y-1/2 w-8 h-8 bg-black/50 hover:bg-black/70 text-white rounded-full flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity z-10">
+                                        <span class="material-symbols-outlined text-sm">chevron_right</span>
+                                    </button>
+
+                                    <!-- Dot Indicators -->
+                                    <div class="absolute bottom-3 left-1/2 -translate-x-1/2 flex gap-1.5 z-10">
+                                        {% if item.images %}
+                                            {% for image in item.images %}
+                                            <div class="carousel-dot w-1.5 h-1.5 rounded-full bg-white/50 transition-all {% if forloop.first %}!bg-white !w-4{% endif %}" data-index="{{ forloop.index0 }}"></div>
+                                            {% endfor %}
+                                        {% endif %}
+                                    </div>
+                                    {% endif %}
+                                </div>
+
                                 {% if item.badge %}
                                 <div
-                                    class="absolute top-4 left-4 z-10 bg-primary text-white text-[10px] font-bold uppercase tracking-widest px-3 py-1 rounded-full shadow-lg">
+                                    class="absolute top-4 left-4 z-20 bg-primary text-white text-[10px] font-bold uppercase tracking-widest px-3 py-1 rounded-full shadow-lg">
                                     {{ item.badge }}
                                 </div>
                                 {% endif %}
-                                <img alt="{{ item.title }}"
-                                    class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
-                                    src="{{ item.image }}" />
                             </div>
                             <div class="p-6 flex flex-col gap-4">
                                 <div class="flex justify-between items-start">
@@ -354,5 +387,58 @@
         </div>
     </div>
 </body>
+<script>
+    // Track carousel state per container
+    const carouselState = new Map();
+    
+    function nextImage(event, btn) {
+        event.preventDefault();
+        event.stopPropagation();
+        const container = btn.closest('.carousel-container');
+        const track = container.querySelector('.carousel-track');
+        const slideCount = parseInt(container.dataset.slides) || 1;
+        const containerId = Array.from(document.querySelectorAll('.carousel-container')).indexOf(container);
+        
+        // Get current index from state
+        let currentIndex = carouselState.get(containerId) || 0;
+        const nextIndex = (currentIndex + 1) % slideCount;
+        
+        // Update track transform
+        track.style.transform = `translateX(calc(-${nextIndex} * 100%))`;
+        carouselState.set(containerId, nextIndex);
+        updateDots(container, nextIndex);
+    }
+    
+    function prevImage(event, btn) {
+        event.preventDefault();
+        event.stopPropagation();
+        const container = btn.closest('.carousel-container');
+        const track = container.querySelector('.carousel-track');
+        const slideCount = parseInt(container.dataset.slides) || 1;
+        const containerId = Array.from(document.querySelectorAll('.carousel-container')).indexOf(container);
+        
+        // Get current index from state
+        let currentIndex = carouselState.get(containerId) || 0;
+        const prevIndex = currentIndex === 0 ? slideCount - 1 : currentIndex - 1;
+        
+        // Update track transform
+        track.style.transform = `translateX(calc(-${prevIndex} * 100%))`;
+        carouselState.set(containerId, prevIndex);
+        updateDots(container, prevIndex);
+    }
+    
+    function updateDots(container, activeIndex) {
+        const dots = container.querySelectorAll('.carousel-dot');
+        dots.forEach((dot, idx) => {
+            if (idx === activeIndex) {
+                dot.classList.add('!bg-white', '!w-4');
+                dot.classList.remove('bg-white/50');
+            } else {
+                dot.classList.remove('!bg-white', '!w-4');
+                dot.classList.add('bg-white/50');
+            }
+        });
+    }
+</script>
 
 </html>

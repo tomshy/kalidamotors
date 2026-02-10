@@ -58,7 +58,7 @@
                         </p>
                     </div>
                     <!-- Search Bar -->
-                    <div class="max-w-[720px] mx-auto mb-12">
+                    <!-- <div class="max-w-[720px] mx-auto mb-12">
                         <label class="flex flex-col min-w-40 h-14 w-full group">
                             <div
                                 class="flex w-full flex-1 items-stretch rounded-xl h-full shadow-sm ring-1 ring-black/5 dark:ring-white/10 group-focus-within:ring-2 group-focus-within:ring-primary transition-all">
@@ -71,9 +71,9 @@
                                     placeholder="Search for questions (e.g., 'shipping time', 'service fee')" />
                             </div>
                         </label>
-                    </div>
+                    </div> -->
                     <!-- Category Tabs -->
-                    <div class="mb-8 overflow-x-auto">
+                    <!-- <div class="mb-8 overflow-x-auto">
                         <div class="flex border-b border-[#dbe0e6] dark:border-white/10 px-4 gap-8 whitespace-nowrap">
                             <a class="flex flex-col items-center justify-center border-b-[3px] border-b-primary text-primary pb-[13px] pt-4"
                                 href="#">
@@ -85,7 +85,7 @@
                             </a>
                             <a class="flex flex-col items-center justify-center border-b-[3px] border-b-transparent text-[#617289] dark:text-gray-400 hover:text-primary pb-[13px] pt-4 transition-all"
                                 href="#">
-                                <p class="text-sm font-bold leading-normal tracking-[0.015em]">Quality &amp; Inspections
+                                <p class="text-sm font-bold leading-normal tracking-[0.015em]">Car quality &amp; Sourcing</p>
                                 </p>
                             </a>
                             <a class="flex flex-col items-center justify-center border-b-[3px] border-b-transparent text-[#617289] dark:text-gray-400 hover:text-primary pb-[13px] pt-4 transition-all"
@@ -93,117 +93,218 @@
                                 <p class="text-sm font-bold leading-normal tracking-[0.015em]">General Information</p>
                             </a>
                         </div>
-                    </div>
+                    </div> -->
                     <!-- Accordion Content -->
-                    <div class="space-y-4 mb-16">
+                    <div class="space-y-4 mb-16" id="faq-accordion">
                         <!-- FAQ Item 1 (Active) -->
                         <div
                             class="bg-white dark:bg-background-dark/50 border border-[#f0f2f4] dark:border-white/10 rounded-xl overflow-hidden ring-1 ring-primary/5 shadow-sm">
-                            <button class="flex items-center justify-between w-full px-6 py-5 text-left bg-primary/5">
+                            <button
+                                class="flex items-center justify-between w-full px-6 py-5 text-left bg-primary/5 faq-toggle"
+                                aria-expanded="true">
                                 <span class="text-[#111418] dark:text-white font-bold text-lg">How long does the
-                                    shipping take?</span>
-                                <span class="material-symbols-outlined text-primary">keyboard_arrow_up</span>
+                                    whole process take?</span>
+                                <span class="material-symbols-outlined text-[#617289]">keyboard_arrow_up</span>
                             </button>
-                            <div
-                                class="px-6 py-5 text-[#617289] dark:text-gray-300 leading-relaxed bg-white dark:bg-background-dark/30">
-                                The entire importation process usually takes between 4 to 6 weeks. This includes 2-3
+                            <div class="px-6 py-5 text-[#617289] dark:text-gray-300 leading-relaxed bg-white dark:bg-background-dark/30 faq-content"
+                                style="display:none;">
+                                After settling and purchasing the car, the entire importation process will take between 6 to 8 weeks. This includes 4-6
                                 weeks for shipping from Japan to the Port of Mombasa, and 1-2 weeks for customs
-                                clearance and transportation to Nairobi or your preferred location. We provide real-time
-                                tracking so you can monitor your vehicle's journey.
+                                clearance and transportation to Nairobi or your preferred location. We provide regular
+                                updates throughout the process so you can track your vehicle every step of the way.
                             </div>
                         </div>
                         <!-- FAQ Item 2 -->
                         <div
                             class="bg-white dark:bg-background-dark/50 border border-[#f0f2f4] dark:border-white/10 rounded-xl overflow-hidden hover:border-primary/20 transition-all shadow-sm">
-                            <button class="flex items-center justify-between w-full px-6 py-5 text-left">
+                            <button class="flex items-center justify-between w-full px-6 py-5 text-left faq-toggle">
                                 <span class="text-[#111418] dark:text-white font-bold text-lg">What documents are
                                     required from my side?</span>
                                 <span class="material-symbols-outlined text-[#617289]">keyboard_arrow_down</span>
                             </button>
+                            <div class="px-6 py-5 text-[#617289] dark:text-gray-300 leading-relaxed bg-white dark:bg-background-dark/30 faq-content"
+                                style="display:none;">
+                                National ID/Passport, KRA PIN, signed agreement, and deposit confirmation.
+                                These are required for NTSA registration and customs processing. We handle all the
+                                paperwork and will guide you through any additional documentation needed based on your
+                                circumstances.
+                            </div>
                         </div>
                         <!-- FAQ Item 3 -->
                         <div
                             class="bg-white dark:bg-background-dark/50 border border-[#f0f2f4] dark:border-white/10 rounded-xl overflow-hidden hover:border-primary/20 transition-all shadow-sm">
-                            <button class="flex items-center justify-between w-full px-6 py-5 text-left">
-                                <span class="text-[#111418] dark:text-white font-bold text-lg">Why is there a service
+                            <button class="flex items-center justify-between w-full px-6 py-5 text-left faq-toggle">
+                                <span class="text-[#111418] dark:text-white font-bold text-lg">Why is there a commitment
                                     fee?</span>
                                 <span class="material-symbols-outlined text-[#617289]">keyboard_arrow_down</span>
                             </button>
+                            <div
+                                class="px-6 py-5 text-[#617289] dark:text-gray-300 leading-relaxed bg-white dark:bg-background-dark/30 faq-content" style="display:none;">
+                                The commitment fee confirms your order and allows us to start bidding and reserving cars
+                                for you. It protects the process and is deducted from your total cost.
+                            </div>
                         </div>
                         <!-- FAQ Item 4 -->
                         <div
                             class="bg-white dark:bg-background-dark/50 border border-[#f0f2f4] dark:border-white/10 rounded-xl overflow-hidden hover:border-primary/20 transition-all shadow-sm">
-                            <button class="flex items-center justify-between w-full px-6 py-5 text-left">
-                                <span class="text-[#111418] dark:text-white font-bold text-lg">Do you offer warranties
-                                    on imported vehicles?</span>
+                            <button class="flex items-center justify-between w-full px-6 py-5 text-left faq-toggle"
+                                >
+                                <span class="text-[#111418] dark:text-white font-bold text-lg">Why is there a service
+                                    fee?</span>
                                 <span class="material-symbols-outlined text-[#617289]">keyboard_arrow_down</span>
                             </button>
+                            <div
+                                class="px-6 py-5 text-[#617289] dark:text-gray-300 leading-relaxed bg-white dark:bg-background-dark/30 faq-content" style="display:none;">
+                                The service fee covers sourcing, inspection, negotiation, shipping coordination,
+                                clearing, and full handling of your import.
+                                We don’t add hidden markups — you pay the real vehicle costs, tax and clearing costs
+                                only. Our service fee is paid last — only after your vehicle arrives and is handed over.
+                            </div>
                         </div>
                         <!-- FAQ Item 5 -->
                         <div
                             class="bg-white dark:bg-background-dark/50 border border-[#f0f2f4] dark:border-white/10 rounded-xl overflow-hidden hover:border-primary/20 transition-all shadow-sm">
-                            <button class="flex items-center justify-between w-full px-6 py-5 text-left">
+                            <button class="flex items-center justify-between w-full px-6 py-5 text-left faq-toggle"
+                                >
                                 <span class="text-[#111418] dark:text-white font-bold text-lg">How do you verify the
                                     car's condition in Japan?</span>
                                 <span class="material-symbols-outlined text-[#617289]">keyboard_arrow_down</span>
                             </button>
+                            <div
+                                class="px-6 py-5 text-[#617289] dark:text-gray-300 leading-relaxed bg-white dark:bg-background-dark/30">
+                                Every vehicle comes with an official auction grade, inspection report, and detailed
+                                photos. We review and share these with you before purchase so you approve the exact car
+                                first.
+                            </div>
+                        </div>
+                        <!-- FAQ Item 6 -->
+                        <div
+                            class="bg-white dark:bg-background-dark/50 border border-[#f0f2f4] dark:border-white/10 rounded-xl overflow-hidden hover:border-primary/20 transition-all shadow-sm">
+                            <button class="flex items-center justify-between w-full px-6 py-5 text-left faq-toggle"
+                                >
+                                <span class="text-[#111418] dark:text-white font-bold text-lg">What auction grades do
+                                    you recommend?</span>
+                                <span class="material-symbols-outlined text-[#617289]">keyboard_arrow_down</span>
+                            </button>
+                            <div
+                                class="px-6 py-5 text-[#617289] dark:text-gray-300 leading-relaxed bg-white dark:bg-background-dark/30 faq-content" style="display:none;">
+                                 We typically source Grade 4 vehicles — mechanically sound, well-maintained cars that
+                                We typically source Grade 4 vehicles — mechanically sound, well-maintained cars that
+                                offer excellent value due to Japan’s strict grading standards.
+                            </div>
+                        </div>
+                        <!-- FAQ Item 7 -->
+                        <div
+                            class="bg-white dark:bg-background-dark/50 border border-[#f0f2f4] dark:border-white/10 rounded-xl overflow-hidden hover:border-primary/20 transition-all shadow-sm">
+                            <button class="flex items-center justify-between w-full px-6 py-5 text-left faq-toggle"
+                                >
+                                <span class="text-[#111418] dark:text-white font-bold text-lg">Can I track my car during
+                                    shipping?</span>
+                                <span class="material-symbols-outlined text-[#617289]">keyboard_arrow_down</span>
+                            </button>
+                            <div
+                                class="px-6 py-5 text-[#617289] dark:text-gray-300 leading-relaxed bg-white dark:bg-background-dark/30 faq-content" style="display:none;">
+                                Yes. We share shipping updates and vessel tracking so you know where your car is at
+                                every stage.
+                            </div>
+                        </div>
+                        <!-- FAQ Item 8 -->
+                        <div
+                            class="bg-white dark:bg-background-dark/50 border border-[#f0f2f4] dark:border-white/10 rounded-xl overflow-hidden hover:border-primary/20 transition-all shadow-sm">
+                            <button class="flex items-center justify-between w-full px-6 py-5 text-left faq-toggle"
+                                >
+                                <span class="text-[#111418] dark:text-white font-bold text-lg">What happens if I change
+                                    my mind after payment?</span>
+                                <span class="material-symbols-outlined text-[#617289]">keyboard_arrow_down</span>
+                            </button>
+                            <div
+                                class="px-6 py-5 text-[#617289] dark:text-gray-300 leading-relaxed bg-white dark:bg-background-dark/30 faq-content" style="display:none;">
+                                Before the final purchase, you may pause or adjust your search. After the vehicle is
+                                bought at auction, the purchase is final since auctions are non-refundable.
+                            </div>
+                        </div>
+                        <!-- FAQ Item 9 -->
+                        <div
+                            class="bg-white dark:bg-background-dark/50 border border-[#f0f2f4] dark:border-white/10 rounded-xl overflow-hidden hover:border-primary/20 transition-all shadow-sm">
+                            <button class="flex items-center justify-between w-full px-6 py-5 text-left faq-toggle"
+                                >
+                                <span class="text-[#111418] dark:text-white font-bold text-lg">Do you handle clearing
+                                    and registration?</span>
+                                <span class="material-symbols-outlined text-[#617289]">keyboard_arrow_down</span>
+                            </button>
+                            <div
+                                class="px-6 py-5 text-[#617289] dark:text-gray-300 leading-relaxed bg-white dark:bg-background-dark/30 faq-content" style="display:none;">
+                                Yes.
+                                We manage customs clearing, NTSA registration and number plates so you receive your car
+                                ready to drive.
+                            </div>
+                        </div>
+                        <!-- FAQ Item 10 -->
+                        <div
+                            class="bg-white dark:bg-background-dark/50 border border-[#f0f2f4] dark:border-white/10 rounded-xl overflow-hidden hover:border-primary/20 transition-all shadow-sm">
+                            <button class="flex items-center justify-between w-full px-6 py-5 text-left faq-toggle"
+                                >
+                                <span class="text-[#111418] dark:text-white font-bold text-lg">Can you help me choose a
+                                    car if I’m not sure what I want?</span>
+                                <span class="material-symbols-outlined text-[#617289]">keyboard_arrow_down</span>
+                            </button>
+                            <div
+                                class="px-6 py-5 text-[#617289] dark:text-gray-300 leading-relaxed bg-white dark:bg-background-dark/30 faq-content" style="display:none;">
+                                Absolutely.
+                                Tell us your budget and preferences and we’ll recommend suitable options and send you
+                                samples to choose from.
+                            </div>
                         </div>
                     </div>
-                    <!-- Still Have Questions? Section -->
-                    <div class="bg-primary/5 dark:bg-primary/10 rounded-2xl p-8 text-center border border-primary/10">
-                        <h3 class="text-2xl font-bold text-[#111418] dark:text-white mb-3">Still have questions?</h3>
-                        <p class="text-[#617289] dark:text-gray-400 mb-8 max-w-md mx-auto">
-                            Can't find the answer you're looking for? Our experts are ready to assist you personally.
-                        </p>
-                        <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
-                            <button
-                                class="flex items-center gap-2 bg-[#25D366] text-white px-8 py-3 rounded-lg font-bold hover:scale-105 transition-transform shadow-lg">
-                                <span class="material-symbols-outlined">chat</span>
-                                WhatsApp Us
-                            </button>
-                            <button
-                                class="flex items-center gap-2 bg-primary text-white px-8 py-3 rounded-lg font-bold hover:scale-105 transition-transform shadow-lg">
-                                <span class="material-symbols-outlined">description</span>
-                                Fill Inquiry Form
-                            </button>
-                        </div>
-                    </div>
-                </div>
             </main>
-            <!-- Simple Footer -->
-            <footer
-                class="mt-auto py-10 px-10 border-t border-[#f0f2f4] dark:border-white/10 bg-white dark:bg-background-dark">
-                <div class="max-w-[1024px] mx-auto flex flex-col md:flex-row justify-between items-center gap-6">
-                    <div class="flex items-center gap-4">
-                        <div class="size-5 text-primary">
-                            <svg fill="currentColor" viewbox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
-                                <path
-                                    d="M24 4C25.7818 14.2173 33.7827 22.2182 44 24C33.7827 25.7818 25.7818 33.7827 24 44C22.2182 33.7827 14.2173 25.7818 4 24C14.2173 22.2182 22.2182 14.2173 24 4Z">
-                                </path>
-                            </svg>
-                        </div>
-                        <p class="text-sm text-[#617289] dark:text-gray-400 font-medium">© 2026 Kalida Motors Kenya.
-                            Professional Car Importation Services.</p>
-                    </div>
-                    <div class="flex gap-6">
-                        <a class="text-xs text-[#617289] dark:text-gray-400 hover:text-primary" href="#">Privacy
-                            Policy</a>
-                        <a class="text-xs text-[#617289] dark:text-gray-400 hover:text-primary" href="#">Terms of
-                            Service</a>
-                        <a class="text-xs text-[#617289] dark:text-gray-400 hover:text-primary" href="#">Cookie
-                            Settings</a>
-                    </div>
-                </div>
-            </footer>
+            {% include footer.html %}
         </div>
     </div>
     <!-- Floating WhatsApp Button (Mobile/Quick Access) -->
     <div class="fixed bottom-6 right-6 z-[60]">
-        <button
+        <button type="button" onclick="window.open('https://wa.me/254718036460', '_blank')"
             class="size-14 bg-[#25D366] text-white rounded-full flex items-center justify-center shadow-xl hover:scale-110 transition-transform">
             <span class="material-symbols-outlined text-3xl">chat</span>
         </button>
     </div>
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const faqToggles = document.querySelectorAll('.faq-toggle');
+
+            // Ensure all are closed on load
+            faqToggles.forEach(function (btn) {
+                const content = btn.nextElementSibling;
+                const icon = btn.querySelector('.material-symbols-outlined');
+                btn.setAttribute('aria-expanded', 'false');
+                if (content) content.style.display = 'none';
+                if (icon) icon.textContent = 'keyboard_arrow_down';
+            });
+
+            faqToggles.forEach(function (btn) {
+                btn.addEventListener('click', function () {
+                    const content = btn.nextElementSibling;
+                    const icon = btn.querySelector('.material-symbols-outlined');
+                    const expanded = btn.getAttribute('aria-expanded') === 'true';
+
+                    // Close all
+                    faqToggles.forEach(function (b) {
+                        const c = b.nextElementSibling;
+                        const i = b.querySelector('.material-symbols-outlined');
+                        b.setAttribute('aria-expanded', 'false');
+                        if (c) c.style.display = 'none';
+                        if (i) i.textContent = 'keyboard_arrow_down';
+                    });
+
+                    // Open current if it was closed
+                    if (!expanded) {
+                        btn.setAttribute('aria-expanded', 'true');
+                        if (content) content.style.display = 'block';
+                        if (icon) icon.textContent = 'keyboard_arrow_up';
+                    }
+                });
+            });
+        });
+    </script>
 </body>
 
 </html>
