@@ -219,7 +219,7 @@
                         </a>
                     </div>
                     <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-                        {% for item in site.data.past_imports %}
+                        {% for item in site.data.past_imports limit:6 %}
                         <div
                             class="group flex flex-col bg-white dark:bg-slate-900 rounded-xl overflow-hidden border border-slate-200 dark:border-slate-800 transition-all hover:shadow-2xl hover:border-primary/30">
                             <div class="relative aspect-[16/10] overflow-hidden">
@@ -269,7 +269,11 @@
                             <div class="p-6 flex flex-col gap-4">
                                 <div class="flex justify-between items-start">
                                     <div>
-                                        <h3 class="text-[#111418] dark:text-white text-xl font-bold">{{ item.title }}
+                                        <h3 class="text-[#111418] dark:text-white text-xl font-bold">
+                                            <a href="vehicle.html?id={{ item.id }}" class="hover:text-primary transition-colors">
+                                                {{ item.title }}
+                                            </a>
+                                        </h3>
                                         </h3>
                                         {% if item.subtitle %}
                                         <p class="text-slate-400 font-medium text-sm">{{ item.subtitle }}</p>
@@ -387,8 +391,9 @@
         </div>
     </div>
 </body>
+
 <script>
-    // Track carousel state per container
+    // Carousel state tracking
     const carouselState = new Map();
     
     function nextImage(event, btn) {
